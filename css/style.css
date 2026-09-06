@@ -802,7 +802,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .project-preview {
   height: 180px;
-  background: var(--bg-secondary);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -810,6 +810,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color: var(--accent-primary);
   font-size: 3rem;
   position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.project-preview .project-logo {
+  max-height: 130px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-preview .project-logo {
+  transform: scale(1.04);
 }
 
 .project-badge {
