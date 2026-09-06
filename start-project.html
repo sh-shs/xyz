@@ -6,10 +6,21 @@
   <meta name="description" content="Start your web development project with WebWorldBD. Submit project specifications, budget, and website requirements to SHAFAET HOSSEN SARIP.">
   <title>Start Project | WebWorldBD</title>
 
+  <!-- Early Theme Init Script -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('webworldbd_theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom CSS -->
@@ -28,16 +39,26 @@
 
       <nav class="desktop-nav" aria-label="Desktop Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-          <li><a href="support.html" class="nav-link">Support</a></li>
-          <li><a href="account.html" class="nav-link">Account</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="services.html" class="nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="index.html#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="support.html" class="nav-link" data-i18n="nav_support">Support</a></li>
+          <li><a href="account.html" class="nav-link" data-i18n="nav_account">Account</a></li>
         </ul>
         <a href="start-project.html" class="btn btn-primary active">
-          <i class="fa-solid fa-rocket"></i> Start Project
+          <i class="fa-solid fa-rocket"></i> <span data-i18n="nav_start_project">Start Project</span>
         </a>
       </nav>
+
+      <!-- Theme & Language Switcher Controls -->
+      <div class="header-controls">
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Switch Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button type="button" class="lang-toggle-btn" id="langToggleBtn" aria-label="Switch Language" title="Switch Language">
+          <span class="lang-en active">EN</span> | <span class="lang-bn">বাংলা</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -45,9 +66,9 @@
   <main>
     <section class="page-hero">
       <div class="container text-center">
-        <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> Request Form</div>
-        <h1 class="page-title">Start Your Project</h1>
-        <p class="page-subtitle">
+        <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="sp_tag">Request Form</span></div>
+        <h1 class="page-title" data-i18n="sp_title">Start Your Project</h1>
+        <p class="page-subtitle" data-i18n="sp_subtitle">
           Fill in your project requirements below. I will review your request and get back to you promptly with a timeline and proposal.
         </p>
       </div>
@@ -61,37 +82,37 @@
             <div class="form-grid">
               <!-- Field 1: Full Name -->
               <div class="form-group">
-                <label for="fullName" class="form-label">1. Full Name <span class="required-star">*</span></label>
-                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g. Tanvir Ahmed" required>
-                <div class="form-error-msg">Please enter your full name.</div>
+                <label for="fullName" class="form-label"><span data-i18n="f_name_label">1. Full Name</span> <span class="required-star">*</span></label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g. Tanvir Ahmed" data-i18n-placeholder="f_name_ph" required>
+                <div class="form-error-msg" data-i18n="f_name_err">Please enter your full name.</div>
               </div>
 
               <!-- Field 2: Address / Location -->
               <div class="form-group">
-                <label for="location" class="form-label">2. Address / Location <span class="required-star">*</span></label>
-                <input type="text" id="location" name="location" class="form-control" placeholder="e.g. Dhaka, Bangladesh" required>
-                <div class="form-error-msg">Please enter your city/location.</div>
+                <label for="location" class="form-label"><span data-i18n="f_loc_label">2. Address / Location</span> <span class="required-star">*</span></label>
+                <input type="text" id="location" name="location" class="form-control" placeholder="e.g. Dhaka, Bangladesh" data-i18n-placeholder="f_loc_ph" required>
+                <div class="form-error-msg" data-i18n="f_loc_err">Please enter your city/location.</div>
               </div>
 
               <!-- Field 3: Phone Number -->
               <div class="form-group">
-                <label for="phone" class="form-label">3. Phone Number <span class="required-star">*</span></label>
-                <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. +8801700000000" required>
-                <div class="form-error-msg">Please enter a valid phone number.</div>
+                <label for="phone" class="form-label"><span data-i18n="f_phone_label">3. Phone Number</span> <span class="required-star">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. +8801700000000" data-i18n-placeholder="f_phone_ph" required>
+                <div class="form-error-msg" data-i18n="f_phone_err">Please enter a valid phone number.</div>
               </div>
 
               <!-- Field 4: Email Address -->
               <div class="form-group">
-                <label for="email" class="form-label">4. Email Address <span class="required-star">*</span></label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="e.g. client@example.com" required>
-                <div class="form-error-msg">Please enter a valid email address.</div>
+                <label for="email" class="form-label"><span data-i18n="f_email_label">4. Email Address</span> <span class="required-star">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="e.g. client@example.com" data-i18n-placeholder="f_email_ph" required>
+                <div class="form-error-msg" data-i18n="f_email_err">Please enter a valid email address.</div>
               </div>
 
               <!-- Field 5 & 6: Website Type & Service Select -->
               <div class="form-group full-width">
-                <label for="websiteType" class="form-label">5 & 6. What type of website do you want? <span class="required-star">*</span></label>
+                <label for="websiteType" class="form-label"><span data-i18n="f_type_label">5 & 6. What type of website do you want?</span> <span class="required-star">*</span></label>
                 <select id="websiteType" name="websiteType" class="form-control" required>
-                  <option value="" disabled selected>-- Select Website / Service Type --</option>
+                  <option value="" disabled selected data-i18n="f_type_select_default">-- Select Website / Service Type --</option>
                   <option value="Business Website">Business Website (Starting ৳15,000+)</option>
                   <option value="E-commerce Website">E-commerce Website (Starting ৳20,000+)</option>
                   <option value="Portfolio Website">Portfolio Website (Starting ৳10,000+)</option>
@@ -109,38 +130,38 @@
                   <option value="AI Website">AI Website (Starting ৳14,000)</option>
                   <option value="Custom Website / Other">Custom Website / Other</option>
                 </select>
-                <div class="form-error-msg">Please select a website type.</div>
+                <div class="form-error-msg" data-i18n="f_type_err">Please select a website type.</div>
               </div>
 
               <!-- Field 7: Project Description / Requirements -->
               <div class="form-group full-width">
-                <label for="projectDesc" class="form-label">7. Project Description / Requirements <span class="required-star">*</span></label>
-                <textarea id="projectDesc" name="projectDesc" class="form-control" rows="4" placeholder="Describe key features, design preferences, and goals for your website..." required></textarea>
-                <div class="form-error-msg">Please provide a short description of your project.</div>
+                <label for="projectDesc" class="form-label"><span data-i18n="f_desc_label">7. Project Description / Requirements</span> <span class="required-star">*</span></label>
+                <textarea id="projectDesc" name="projectDesc" class="form-control" rows="4" placeholder="Describe key features, design preferences, and goals for your website..." data-i18n-placeholder="f_desc_ph" required></textarea>
+                <div class="form-error-msg" data-i18n="f_desc_err">Please provide a short description of your project.</div>
               </div>
 
               <!-- Field 8: Estimated Budget -->
               <div class="form-group">
-                <label for="estimatedBudget" class="form-label">8. Estimated Budget (BDT)</label>
-                <input type="text" id="estimatedBudget" name="estimatedBudget" class="form-control" placeholder="e.g. ৳15,000 - ৳25,000">
+                <label for="estimatedBudget" class="form-label" data-i18n="f_budget_label">8. Estimated Budget (BDT)</label>
+                <input type="text" id="estimatedBudget" name="estimatedBudget" class="form-control" placeholder="e.g. ৳15,000 - ৳25,000" data-i18n-placeholder="f_budget_ph">
               </div>
 
               <!-- Field 9: Preferred Deadline -->
               <div class="form-group">
-                <label for="deadline" class="form-label">9. Preferred Deadline</label>
-                <input type="text" id="deadline" name="deadline" class="form-control" placeholder="e.g. Within 2 weeks">
+                <label for="deadline" class="form-label" data-i18n="f_deadline_label">9. Preferred Deadline</label>
+                <input type="text" id="deadline" name="deadline" class="form-control" placeholder="e.g. Within 2 weeks" data-i18n-placeholder="f_deadline_ph">
               </div>
 
               <!-- Field 10: Additional Information -->
               <div class="form-group full-width">
-                <label for="additionalInfo" class="form-label">10. Additional Information</label>
-                <textarea id="additionalInfo" name="additionalInfo" class="form-control" rows="3" placeholder="Any reference website links or special requests?"></textarea>
+                <label for="additionalInfo" class="form-label" data-i18n="f_info_label">10. Additional Information</label>
+                <textarea id="additionalInfo" name="additionalInfo" class="form-control" rows="3" placeholder="Any reference website links or special requests?" data-i18n-placeholder="f_info_ph"></textarea>
               </div>
             </div>
 
             <div class="form-actions" style="margin-top: 2rem;">
               <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
-                <i class="fa-solid fa-paper-plane"></i> Submit Project Request
+                <i class="fa-solid fa-paper-plane"></i> <span data-i18n="f_submit_btn">Submit Project Request</span>
               </button>
             </div>
           </form>
@@ -148,15 +169,15 @@
           <!-- Success State View (Initially Hidden) -->
           <div id="formSuccessMessage" class="form-success-card" style="display: none;">
             <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-            <h2>Project Request Received!</h2>
-            <p>Thank you for submitting your project request to WebWorldBD. SHAFAET HOSSEN SARIP will review your requirements and reach out to you directly via Phone / WhatsApp or Email shortly.</p>
+            <h2 data-i18n="succ_title">Project Request Received!</h2>
+            <p><span data-i18n="succ_p1_before">Thank you for submitting your project request to WebWorldBD. </span><strong>SHAFAET HOSSEN SARIP</strong><span data-i18n="succ_p1_after"> will review your requirements and reach out to you directly via Phone / WhatsApp or Email shortly.</span></p>
 
             <div class="success-actions" style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
               <a href="https://wa.me/8801342697743" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                <i class="fa-brands fa-whatsapp"></i> Chat Instant on WhatsApp
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="succ_wa_btn">Chat Instant on WhatsApp</span>
               </a>
               <button type="button" id="btnResetForm" class="btn btn-secondary">
-                Submit Another Request
+                <span data-i18n="succ_reset_btn">Submit Another Request</span>
               </button>
             </div>
           </div>
@@ -191,7 +212,7 @@
         </a>
       </div>
 
-      <p>© <span id="current-year"></span> WebWorldBD. Managed by <strong>SHAFAET HOSSEN SARIP</strong>. All rights reserved.</p>
+      <p>© <span id="current-year"></span> <span data-i18n="footer_rights">WebWorldBD. Managed by</span> <strong>SHAFAET HOSSEN SARIP</strong>. <span data-i18n="footer_all_rights">All rights reserved.</span></p>
     </div>
   </footer>
 
@@ -201,13 +222,13 @@
       <!-- 1. Home -->
       <a href="index.html" class="bottom-nav-item">
         <i class="fa-solid fa-house bottom-nav-icon"></i>
-        <span>Home</span>
+        <span data-i18n="nav_home">Home</span>
       </a>
 
       <!-- 2. Services -->
       <a href="services.html" class="bottom-nav-item">
         <i class="fa-solid fa-layer-group bottom-nav-icon"></i>
-        <span>Services</span>
+        <span data-i18n="nav_services">Services</span>
       </a>
 
       <!-- 3. START PROJECT (Highlighted Center Button) -->
@@ -215,24 +236,25 @@
         <div class="bottom-nav-cta">
           <i class="fa-solid fa-rocket" style="font-size: 1.4rem;"></i>
         </div>
-        <span class="bottom-nav-cta-label">START PROJECT</span>
+        <span class="bottom-nav-cta-label" data-i18n="nav_start_project_caps">START PROJECT</span>
       </a>
 
       <!-- 4. Support -->
       <a href="support.html" class="bottom-nav-item">
         <i class="fa-solid fa-headset bottom-nav-icon"></i>
-        <span>Support</span>
+        <span data-i18n="nav_support">Support</span>
       </a>
 
       <!-- 5. Account -->
       <a href="account.html" class="bottom-nav-item">
         <i class="fa-solid fa-user bottom-nav-icon"></i>
-        <span>Account</span>
+        <span data-i18n="nav_account">Account</span>
       </a>
     </div>
   </nav>
 
   <!-- JavaScript -->
+  <script src="js/translations.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -6,10 +6,21 @@
   <meta name="description" content="Support & Contact Channels for WebWorldBD. Reach out via Phone, WhatsApp, Email, Telegram, Facebook, TikTok, or Fiverr to SHAFAET HOSSEN SARIP.">
   <title>Support Center | WebWorldBD</title>
 
+  <!-- Early Theme Init Script -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('webworldbd_theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom CSS -->
@@ -28,16 +39,26 @@
 
       <nav class="desktop-nav" aria-label="Desktop Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-          <li><a href="support.html" class="nav-link active">Support</a></li>
-          <li><a href="account.html" class="nav-link">Account</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="services.html" class="nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="index.html#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="support.html" class="nav-link active" data-i18n="nav_support">Support</a></li>
+          <li><a href="account.html" class="nav-link" data-i18n="nav_account">Account</a></li>
         </ul>
         <a href="start-project.html" class="btn btn-primary">
-          <i class="fa-solid fa-rocket"></i> Start Project
+          <i class="fa-solid fa-rocket"></i> <span data-i18n="nav_start_project">Start Project</span>
         </a>
       </nav>
+
+      <!-- Theme & Language Switcher Controls -->
+      <div class="header-controls">
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Switch Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button type="button" class="lang-toggle-btn" id="langToggleBtn" aria-label="Switch Language" title="Switch Language">
+          <span class="lang-en active">EN</span> | <span class="lang-bn">বাংলা</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -45,9 +66,9 @@
   <main>
     <section class="page-hero">
       <div class="container text-center">
-        <div class="section-tag"><i class="fa-solid fa-headset"></i> Support Center</div>
-        <h1 class="page-title">Contact & Support Channels</h1>
-        <p class="page-subtitle">
+        <div class="section-tag"><i class="fa-solid fa-headset"></i> <span data-i18n="sup_tag">Support Center</span></div>
+        <h1 class="page-title" data-i18n="sup_title">Contact & Support Channels</h1>
+        <p class="page-subtitle" data-i18n="sup_subtitle">
           Have questions or need consultation? Reach out directly through any of the official WebWorldBD communication channels below.
         </p>
       </div>
@@ -59,15 +80,15 @@
 
           <!-- Direct Contact Channels -->
           <div class="support-info-card">
-            <h3 class="modal-title"><i class="fa-solid fa-address-book gradient-text"></i> Direct Channels</h3>
-            <p class="contact-label" style="margin-bottom: 1.5rem;">Immediate response & direct technical support</p>
+            <h3 class="modal-title"><i class="fa-solid fa-address-book gradient-text"></i> <span data-i18n="sup_direct_title">Direct Channels</span></h3>
+            <p class="contact-label" style="margin-bottom: 1.5rem;" data-i18n="sup_direct_sub">Immediate response & direct technical support</p>
 
             <div class="support-channels">
               <!-- Phone -->
               <a href="tel:+8801342697743" class="contact-item">
                 <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                 <div class="contact-details">
-                  <div class="contact-label">Call Me</div>
+                  <div class="contact-label" data-i18n="sup_call_me">Call Me</div>
                   <div class="contact-value">+8801342697743</div>
                 </div>
               </a>
@@ -76,7 +97,7 @@
               <a href="https://wa.me/8801342697743" target="_blank" rel="noopener noreferrer" class="contact-item">
                 <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
                 <div class="contact-details">
-                  <div class="contact-label">Contact on WhatsApp</div>
+                  <div class="contact-label" data-i18n="sup_wa_contact">Contact on WhatsApp</div>
                   <div class="contact-value">+8801342697743</div>
                 </div>
               </a>
@@ -85,7 +106,7 @@
               <a href="tel:+8809658183506" class="contact-item">
                 <div class="contact-icon"><i class="fa-solid fa-headset"></i></div>
                 <div class="contact-details">
-                  <div class="contact-label">Hotline</div>
+                  <div class="contact-label" data-i18n="sup_hotline">Hotline</div>
                   <div class="contact-value">+8809658183506</div>
                 </div>
               </a>
@@ -94,7 +115,7 @@
               <a href="mailto:saripofficialsupport@gmail.com" class="contact-item">
                 <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                 <div class="contact-details">
-                  <div class="contact-label">Email Support</div>
+                  <div class="contact-label" data-i18n="sup_email_sup">Email Support</div>
                   <div class="contact-value">saripofficialsupport@gmail.com</div>
                 </div>
               </a>
@@ -103,7 +124,7 @@
               <a href="https://t.me/saripsupportBD" target="_blank" rel="noopener noreferrer" class="contact-item">
                 <div class="contact-icon"><i class="fa-brands fa-telegram"></i></div>
                 <div class="contact-details">
-                  <div class="contact-label">Telegram Support</div>
+                  <div class="contact-label" data-i18n="sup_tg_sup">Telegram Support</div>
                   <div class="contact-value">t.me/saripsupportBD</div>
                 </div>
               </a>
@@ -112,8 +133,8 @@
 
           <!-- Social Media & Fiverr Profiles -->
           <div class="support-info-card">
-            <h3 class="modal-title"><i class="fa-solid fa-share-nodes gradient-text"></i> Social & Freelance Gigs</h3>
-            <p class="contact-label" style="margin-bottom: 1.5rem;">Explore verified freelancing profiles & social channels</p>
+            <h3 class="modal-title"><i class="fa-solid fa-share-nodes gradient-text"></i> <span data-i18n="sup_social_title">Social & Freelance Gigs</span></h3>
+            <p class="contact-label" style="margin-bottom: 1.5rem;" data-i18n="sup_social_sub">Explore verified freelancing profiles & social channels</p>
 
             <div class="support-channels">
               <!-- Fiverr Profile -->
@@ -121,8 +142,8 @@
                 <div class="gig-info">
                   <div class="gig-icon"><i class="fa-solid fa-user-check"></i></div>
                   <div>
-                    <div class="gig-title">View Fiverr Profile</div>
-                    <div class="gig-badge">Verified Fiverr Seller</div>
+                    <div class="gig-title" data-i18n="sup_fv_profile">View Fiverr Profile</div>
+                    <div class="gig-badge" data-i18n="sup_fv_badge_seller">Verified Fiverr Seller</div>
                   </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -133,8 +154,8 @@
                 <div class="gig-info">
                   <div class="gig-icon"><i class="fa-solid fa-code"></i></div>
                   <div>
-                    <div class="gig-title">Fiverr Web Developer Gig</div>
-                    <div class="gig-badge">Full Custom Websites</div>
+                    <div class="gig-title" data-i18n="sup_fv_web_gig">Fiverr Web Developer Gig</div>
+                    <div class="gig-badge" data-i18n="sup_fv_badge_web">Full Custom Websites</div>
                   </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -145,8 +166,8 @@
                 <div class="gig-info">
                   <div class="gig-icon"><i class="fa-solid fa-mobile-screen"></i></div>
                   <div>
-                    <div class="gig-title">Fiverr App Developer Gig</div>
-                    <div class="gig-badge">Web & Mobile Apps</div>
+                    <div class="gig-title" data-i18n="sup_fv_app_gig">Fiverr App Developer Gig</div>
+                    <div class="gig-badge" data-i18n="sup_fv_badge_app">Web & Mobile Apps</div>
                   </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -157,8 +178,8 @@
                 <div class="gig-info">
                   <div class="gig-icon"><i class="fa-solid fa-table"></i></div>
                   <div>
-                    <div class="gig-title">Fiverr Excel / Data Entry Gig</div>
-                    <div class="gig-badge">Spreadsheets & Salary Sheets</div>
+                    <div class="gig-title" data-i18n="sup_fv_excel_gig">Fiverr Excel / Data Entry Gig</div>
+                    <div class="gig-badge" data-i18n="sup_fv_badge_excel">Spreadsheets & Salary Sheets</div>
                   </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -169,8 +190,8 @@
                 <div class="gig-info">
                   <div class="gig-icon"><i class="fa-brands fa-telegram"></i></div>
                   <div>
-                    <div class="gig-title">Telegram Page</div>
-                    <div class="gig-badge">https://t.me/webworldbd</div>
+                    <div class="gig-title" data-i18n="sup_tg_page">Telegram Page</div>
+                    <div class="gig-badge">t.me/webworldbd</div>
                   </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -181,8 +202,8 @@
                 <div class="gig-info">
                   <div class="gig-icon"><i class="fa-brands fa-facebook"></i></div>
                   <div>
-                    <div class="gig-title">Visit Facebook</div>
-                    <div class="gig-badge">Official Facebook Page</div>
+                    <div class="gig-title" data-i18n="sup_fb_page">Visit Facebook</div>
+                    <div class="gig-badge" data-i18n="sup_fb_badge">Official Facebook Page</div>
                   </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -193,7 +214,7 @@
                 <div class="gig-info">
                   <div class="gig-icon"><i class="fa-brands fa-tiktok"></i></div>
                   <div>
-                    <div class="gig-title">Visit TikTok</div>
+                    <div class="gig-title" data-i18n="sup_tiktok_page">Visit TikTok</div>
                     <div class="gig-badge">@shsaripofficial</div>
                   </div>
                 </div>
@@ -233,7 +254,7 @@
         </a>
       </div>
 
-      <p>© <span id="current-year"></span> WebWorldBD. Managed by <strong>SHAFAET HOSSEN SARIP</strong>. All rights reserved.</p>
+      <p>© <span id="current-year"></span> <span data-i18n="footer_rights">WebWorldBD. Managed by</span> <strong>SHAFAET HOSSEN SARIP</strong>. <span data-i18n="footer_all_rights">All rights reserved.</span></p>
     </div>
   </footer>
 
@@ -243,13 +264,13 @@
       <!-- 1. Home -->
       <a href="index.html" class="bottom-nav-item">
         <i class="fa-solid fa-house bottom-nav-icon"></i>
-        <span>Home</span>
+        <span data-i18n="nav_home">Home</span>
       </a>
 
       <!-- 2. Services -->
       <a href="services.html" class="bottom-nav-item">
         <i class="fa-solid fa-layer-group bottom-nav-icon"></i>
-        <span>Services</span>
+        <span data-i18n="nav_services">Services</span>
       </a>
 
       <!-- 3. START PROJECT (Highlighted Center Button) -->
@@ -257,24 +278,25 @@
         <div class="bottom-nav-cta">
           <i class="fa-solid fa-rocket" style="font-size: 1.4rem;"></i>
         </div>
-        <span class="bottom-nav-cta-label">START PROJECT</span>
+        <span class="bottom-nav-cta-label" data-i18n="nav_start_project_caps">START PROJECT</span>
       </a>
 
       <!-- 4. Support -->
       <a href="support.html" class="bottom-nav-item active">
         <i class="fa-solid fa-headset bottom-nav-icon"></i>
-        <span>Support</span>
+        <span data-i18n="nav_support">Support</span>
       </a>
 
       <!-- 5. Account -->
       <a href="account.html" class="bottom-nav-item">
         <i class="fa-solid fa-user bottom-nav-icon"></i>
-        <span>Account</span>
+        <span data-i18n="nav_account">Account</span>
       </a>
     </div>
   </nav>
 
   <!-- JavaScript -->
+  <script src="js/translations.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
