@@ -14,10 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme) {
       return savedTheme;
     }
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      return 'light';
-    }
-    return 'dark'; // Default
+    return 'light'; // Default initial theme
   }
 
   function applyTheme(theme) {
@@ -48,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (e) => {
     const toggleBtn = e.target.closest('.theme-toggle-btn');
     if (toggleBtn) {
-      const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
       const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
       applyTheme(newTheme);
     }
