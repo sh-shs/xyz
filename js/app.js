@@ -1,5 +1,5 @@
 /**
- * SHAFAET HOSSEN SARIP - Service Web App
+ * WebWorldBD - Web Development & Digital Services
  * Phase 1 Foundation JavaScript (Vanilla ES6+)
  */
 
