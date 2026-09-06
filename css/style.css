@@ -546,6 +546,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   justify-content: center;
   font-size: 2.25rem;
   color: var(--accent-primary);
+  overflow: hidden;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  display: block;
 }
 
 .profile-name {
@@ -1139,6 +1149,7 @@ select.form-control option {
   color: var(--accent-primary);
   flex-shrink: 0;
   box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
 .account-title-group {
