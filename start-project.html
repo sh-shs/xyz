@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Start your web development project with WebWorldBD. Submit project specifications, budget, and website requirements to SHAFAET HOSSEN SARIP.">
+  <title>Start Project | WebWorldBD</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- DESKTOP HEADER -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="WebWorldBD Home">
+        <span class="logo-badge">W</span>
+        <span>WebWorldBD</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Desktop Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+          <li><a href="account.html" class="nav-link">Account</a></li>
+        </ul>
+        <a href="start-project.html" class="btn btn-primary active">
+          <i class="fa-solid fa-rocket"></i> Start Project
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="page-hero">
+      <div class="container text-center">
+        <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> Request Form</div>
+        <h1 class="page-title">Start Your Project</h1>
+        <p class="page-subtitle">
+          Fill in your project requirements below. I will review your request and get back to you promptly with a timeline and proposal.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container" style="max-width: 800px;">
+        <div class="form-wrapper">
+          <form id="projectRequestForm" class="project-form" novalidate>
+
+            <div class="form-grid">
+              <!-- Field 1: Full Name -->
+              <div class="form-group">
+                <label for="fullName" class="form-label">1. Full Name <span class="required-star">*</span></label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g. Tanvir Ahmed" required>
+                <div class="form-error-msg">Please enter your full name.</div>
+              </div>
+
+              <!-- Field 2: Address / Location -->
+              <div class="form-group">
+                <label for="location" class="form-label">2. Address / Location <span class="required-star">*</span></label>
+                <input type="text" id="location" name="location" class="form-control" placeholder="e.g. Dhaka, Bangladesh" required>
+                <div class="form-error-msg">Please enter your city/location.</div>
+              </div>
+
+              <!-- Field 3: Phone Number -->
+              <div class="form-group">
+                <label for="phone" class="form-label">3. Phone Number <span class="required-star">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. +8801700000000" required>
+                <div class="form-error-msg">Please enter a valid phone number.</div>
+              </div>
+
+              <!-- Field 4: Email Address -->
+              <div class="form-group">
+                <label for="email" class="form-label">4. Email Address <span class="required-star">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="e.g. client@example.com" required>
+                <div class="form-error-msg">Please enter a valid email address.</div>
+              </div>
+
+              <!-- Field 5 & 6: Website Type & Service Select -->
+              <div class="form-group full-width">
+                <label for="websiteType" class="form-label">5 & 6. What type of website do you want? <span class="required-star">*</span></label>
+                <select id="websiteType" name="websiteType" class="form-control" required>
+                  <option value="" disabled selected>-- Select Website / Service Type --</option>
+                  <option value="Business Website">Business Website (Starting ৳15,000+)</option>
+                  <option value="E-commerce Website">E-commerce Website (Starting ৳20,000+)</option>
+                  <option value="Portfolio Website">Portfolio Website (Starting ৳10,000+)</option>
+                  <option value="Blog Website">Blog Website (Starting ৳12,000+)</option>
+                  <option value="News Website">News Website (Starting ৳18,000+)</option>
+                  <option value="Educational Website">Educational Website (Starting ৳15,000+)</option>
+                  <option value="Social Media Website">Social Media Website (Starting ৳20,000+)</option>
+                  <option value="Web App / SaaS">Web App / SaaS (Starting ৳22,000+)</option>
+                  <option value="Booking Website">Booking Website (Starting ৳15,000+)</option>
+                  <option value="Marketplace Website">Marketplace Website (Starting ৳15,000+)</option>
+                  <option value="Forum / Community Website">Forum / Community Website (Starting ৳12,000+)</option>
+                  <option value="Entertainment Website">Entertainment Website (Starting ৳16,000+)</option>
+                  <option value="Landing Page">Landing Page (Starting ৳8,000+)</option>
+                  <option value="Government Website">Government Website (Custom Pricing)</option>
+                  <option value="AI Website">AI Website (Starting ৳14,000)</option>
+                  <option value="Custom Website / Other">Custom Website / Other</option>
+                </select>
+                <div class="form-error-msg">Please select a website type.</div>
+              </div>
+
+              <!-- Field 7: Project Description / Requirements -->
+              <div class="form-group full-width">
+                <label for="projectDesc" class="form-label">7. Project Description / Requirements <span class="required-star">*</span></label>
+                <textarea id="projectDesc" name="projectDesc" class="form-control" rows="4" placeholder="Describe key features, design preferences, and goals for your website..." required></textarea>
+                <div class="form-error-msg">Please provide a short description of your project.</div>
+              </div>
+
+              <!-- Field 8: Estimated Budget -->
+              <div class="form-group">
+                <label for="estimatedBudget" class="form-label">8. Estimated Budget (BDT)</label>
+                <input type="text" id="estimatedBudget" name="estimatedBudget" class="form-control" placeholder="e.g. ৳15,000 - ৳25,000">
+              </div>
+
+              <!-- Field 9: Preferred Deadline -->
+              <div class="form-group">
+                <label for="deadline" class="form-label">9. Preferred Deadline</label>
+                <input type="text" id="deadline" name="deadline" class="form-control" placeholder="e.g. Within 2 weeks">
+              </div>
+
+              <!-- Field 10: Additional Information -->
+              <div class="form-group full-width">
+                <label for="additionalInfo" class="form-label">10. Additional Information</label>
+                <textarea id="additionalInfo" name="additionalInfo" class="form-control" rows="3" placeholder="Any reference website links or special requests?"></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions" style="margin-top: 2rem;">
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i> Submit Project Request
+              </button>
+            </div>
+          </form>
+
+          <!-- Success State View (Initially Hidden) -->
+          <div id="formSuccessMessage" class="form-success-card" style="display: none;">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h2>Project Request Received!</h2>
+            <p>Thank you for submitting your project request to WebWorldBD. SHAFAET HOSSEN SARIP will review your requirements and reach out to you directly via Phone / WhatsApp or Email shortly.</p>
+
+            <div class="success-actions" style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="https://wa.me/8801342697743" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Chat Instant on WhatsApp
+              </a>
+              <button type="button" id="btnResetForm" class="btn btn-secondary">
+                Submit Another Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">W</span>
+        <span>WebWorldBD</span>
+      </a>
+
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/19Bu6bwyWv/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook Page">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.tiktok.com/@shsaripofficial" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://t.me/webworldbd" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Telegram">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="mailto:saripofficialsupport@gmail.com" class="social-icon-btn" aria-label="Gmail Support">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://www.fiverr.com/s/K38AVRk" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Fiverr Profile">
+          <i class="fa-solid fa-briefcase"></i>
+        </a>
+      </div>
+
+      <p>© <span id="current-year"></span> WebWorldBD. Managed by <strong>SHAFAET HOSSEN SARIP</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- MOBILE APP-LIKE FIXED BOTTOM NAVIGATION -->
+  <nav class="bottom-nav" aria-label="Mobile Navigation">
+    <div class="bottom-nav-container">
+      <!-- 1. Home -->
+      <a href="index.html" class="bottom-nav-item">
+        <i class="fa-solid fa-house bottom-nav-icon"></i>
+        <span>Home</span>
+      </a>
+
+      <!-- 2. Services -->
+      <a href="services.html" class="bottom-nav-item">
+        <i class="fa-solid fa-layer-group bottom-nav-icon"></i>
+        <span>Services</span>
+      </a>
+
+      <!-- 3. START PROJECT (Highlighted Center Button) -->
+      <a href="start-project.html" class="bottom-nav-item active" aria-label="Start Project">
+        <div class="bottom-nav-cta">
+          <i class="fa-solid fa-rocket" style="font-size: 1.4rem;"></i>
+        </div>
+        <span class="bottom-nav-cta-label">START PROJECT</span>
+      </a>
+
+      <!-- 4. Support -->
+      <a href="support.html" class="bottom-nav-item">
+        <i class="fa-solid fa-headset bottom-nav-icon"></i>
+        <span>Support</span>
+      </a>
+
+      <!-- 5. Account -->
+      <a href="account.html" class="bottom-nav-item">
+        <i class="fa-solid fa-user bottom-nav-icon"></i>
+        <span>Account</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- JavaScript -->
+  <script src="js/app.js"></script>
+</body>
+</html>

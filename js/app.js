@@ -1,112 +1,83 @@
 /**
  * WebWorldBD - Web Development & Digital Services
- * Phase 1 Foundation JavaScript (Vanilla ES6+)
+ * Phase 2 Vanilla JavaScript Logic
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Dynamic Year Update
+  // 1. Dynamic Footer Year Update
   const yearSpan = document.getElementById('current-year');
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // 2. Modal Handler Elements
-  const projectModal = document.getElementById('projectModal');
-  const accountModal = document.getElementById('accountModal');
-  const openProjectBtns = document.querySelectorAll('.open-project-modal');
-  const openAccountBtns = document.querySelectorAll('.open-account-modal');
-  const closeModalBtns = document.querySelectorAll('.close-modal');
-  const allModals = document.querySelectorAll('.modal-overlay');
+  // 2. Pre-fill Service Select from URL Query Parameter on start-project.html
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedServiceParam = urlParams.get('service');
+  const serviceSelect = document.getElementById('websiteType');
 
-  // Open Modal Helper
-  const openModal = (modal) => {
-    if (!modal) return;
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
-
-  // Close Modal Helper
-  const closeModal = (modal) => {
-    if (!modal) return;
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  // Event listeners for opening Start Project modal
-  openProjectBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal(projectModal);
-    });
-  });
-
-  // Event listeners for opening Account modal
-  openAccountBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal(accountModal);
-    });
-  });
-
-  // Event listeners for closing modals
-  closeModalBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      allModals.forEach(m => closeModal(m));
-    });
-  });
-
-  // Close on background overlay click
-  allModals.forEach(modal => {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal(modal);
+  if (serviceSelect && selectedServiceParam) {
+    const decodedService = decodeURIComponent(selectedServiceParam);
+    for (let i = 0; i < serviceSelect.options.length; i++) {
+      if (serviceSelect.options[i].value.toLowerCase() === decodedService.toLowerCase()) {
+        serviceSelect.selectedIndex = i;
+        break;
       }
-    });
-  });
-
-  // Close on Escape key press
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      allModals.forEach(m => closeModal(m));
     }
-  });
+  }
 
-  // 3. Navigation Scroll Active Link Observer
-  const sections = document.querySelectorAll('section[id]');
-  const desktopNavLinks = document.querySelectorAll('.desktop-nav .nav-link');
-  const bottomNavItems = document.querySelectorAll('.bottom-nav-item[data-target]');
+  // 3. Project Request Form Validation & Submission Handler
+  const projectForm = document.getElementById('projectRequestForm');
+  const successMessage = document.getElementById('formSuccessMessage');
+  const resetFormBtn = document.getElementById('btnResetForm');
 
-  const updateActiveNav = () => {
-    let currentSection = 'home';
-    const scrollY = window.pageYOffset;
+  if (projectForm) {
+    const requiredInputs = projectForm.querySelectorAll('[required]');
 
-    sections.forEach(section => {
-      const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop - 120;
-      const sectionId = section.getAttribute('id');
+    // Clear validation state on input
+    requiredInputs.forEach(input => {
+      input.addEventListener('input', () => {
+        if (input.value.trim() !== '') {
+          input.classList.remove('invalid');
+        }
+      });
+    });
 
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        currentSection = sectionId;
+    projectForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      requiredInputs.forEach(input => {
+        if (!input.value || input.value.trim() === '') {
+          input.classList.add('invalid');
+          isValid = false;
+        } else {
+          input.classList.remove('invalid');
+        }
+      });
+
+      if (isValid) {
+        // Hide form and show success state
+        projectForm.style.display = 'none';
+        if (successMessage) {
+          successMessage.style.display = 'block';
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } else {
+        // Focus first invalid input
+        const firstInvalid = projectForm.querySelector('.invalid');
+        if (firstInvalid) {
+          firstInvalid.focus();
+        }
       }
     });
 
-    // Desktop Nav Active State
-    desktopNavLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSection}`) {
-        link.classList.add('active');
-      }
-    });
-
-    // Mobile Bottom Nav Active State
-    bottomNavItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.getAttribute('data-target') === currentSection) {
-        item.classList.add('active');
-      }
-    });
-  };
-
-  window.addEventListener('scroll', updateActiveNav);
-  updateActiveNav();
+    if (resetFormBtn && successMessage) {
+      resetFormBtn.addEventListener('click', () => {
+        projectForm.reset();
+        projectForm.style.display = 'block';
+        successMessage.style.display = 'none';
+        projectForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }
 });
