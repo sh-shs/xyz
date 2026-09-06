@@ -9,10 +9,7 @@
   <!-- Early Theme Init Script -->
   <script>
     (function() {
-      var savedTheme = localStorage.getItem('webworldbd_theme');
-      if (!savedTheme) {
-        savedTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-      }
+      var savedTheme = localStorage.getItem('webworldbd_theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
     })();
   </script>

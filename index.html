@@ -10,10 +10,7 @@
   <!-- Early Theme Init Script -->
   <script>
     (function() {
-      var savedTheme = localStorage.getItem('webworldbd_theme');
-      if (!savedTheme) {
-        savedTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-      }
+      var savedTheme = localStorage.getItem('webworldbd_theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
     })();
   </script>
@@ -68,6 +65,22 @@
     <!-- PROFILE / HERO SECTION -->
     <section class="hero" id="home">
       <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="profile-preview">
+            <div class="avatar-wrapper">
+              <div class="avatar-inner">
+                <img src="assets/images/profile/sarip-profile.png" alt="SHAFAET HOSSEN SARIP - Website & App Developer" class="profile-img">
+              </div>
+            </div>
+            <h2 class="profile-name">SHAFAET HOSSEN SARIP</h2>
+            <p class="profile-role" data-i18n="profile_role">Website & App Developer</p>
+            <p class="profile-location"><i class="fa-solid fa-location-dot"></i> <span data-i18n="profile_loc">Kushtia, Khulna, Bangladesh</span></p>
+            <div class="status-badge" style="margin-top: 1rem;">
+              <span class="status-dot"></span> <span data-i18n="profile_status">Available for Freelance & Custom Projects</span>
+            </div>
+          </div>
+        </div>
+
         <div class="hero-content">
           <div class="section-tag">
             <i class="fa-solid fa-code"></i> <span data-i18n="hero_tag">Professional Developer Profile</span>
@@ -98,22 +111,6 @@
             <div class="stat-item">
               <h4 data-i18n="hero_stat_tech_val">Modern</h4>
               <p data-i18n="hero_stat_tech">Tech Stack</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="profile-preview">
-            <div class="avatar-wrapper">
-              <div class="avatar-inner">
-                <img src="assets/images/profile/sarip-profile.png" alt="SHAFAET HOSSEN SARIP - Website & App Developer" class="profile-img">
-              </div>
-            </div>
-            <h2 class="profile-name">SHAFAET HOSSEN SARIP</h2>
-            <p class="profile-role" data-i18n="profile_role">Website & App Developer</p>
-            <p class="profile-location"><i class="fa-solid fa-location-dot"></i> <span data-i18n="profile_loc">Kushtia, Khulna, Bangladesh</span></p>
-            <div class="status-badge" style="margin-top: 1rem;">
-              <span class="status-dot"></span> <span data-i18n="profile_status">Available for Freelance & Custom Projects</span>
             </div>
           </div>
         </div>
