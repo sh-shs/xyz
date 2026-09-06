@@ -6,10 +6,21 @@
   <meta name="description" content="WebWorldBD Services & Transparent Pricing. Explore website development starting prices for Business, E-commerce, SaaS, Portfolios, Blogs, and Custom Web Applications developed by SHAFAET HOSSEN SARIP.">
   <title>Services & Pricing | WebWorldBD</title>
 
+  <!-- Early Theme Init Script -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('webworldbd_theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom CSS -->
@@ -28,16 +39,26 @@
 
       <nav class="desktop-nav" aria-label="Desktop Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="services.html" class="nav-link active">Services</a></li>
-          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-          <li><a href="support.html" class="nav-link">Support</a></li>
-          <li><a href="account.html" class="nav-link">Account</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="services.html" class="nav-link active" data-i18n="nav_services">Services</a></li>
+          <li><a href="index.html#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="support.html" class="nav-link" data-i18n="nav_support">Support</a></li>
+          <li><a href="account.html" class="nav-link" data-i18n="nav_account">Account</a></li>
         </ul>
         <a href="start-project.html" class="btn btn-primary">
-          <i class="fa-solid fa-rocket"></i> Start Project
+          <i class="fa-solid fa-rocket"></i> <span data-i18n="nav_start_project">Start Project</span>
         </a>
       </nav>
+
+      <!-- Theme & Language Switcher Controls -->
+      <div class="header-controls">
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Switch Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button type="button" class="lang-toggle-btn" id="langToggleBtn" aria-label="Switch Language" title="Switch Language">
+          <span class="lang-en active">EN</span> | <span class="lang-bn">বাংলা</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -46,9 +67,9 @@
     <!-- PAGE HERO -->
     <section class="page-hero">
       <div class="container text-center">
-        <div class="section-tag"><i class="fa-solid fa-layer-group"></i> WebWorldBD Offerings</div>
-        <h1 class="page-title">Digital Services & Starting Rates</h1>
-        <p class="page-subtitle">
+        <div class="section-tag"><i class="fa-solid fa-layer-group"></i> <span data-i18n="services_page_tag">WebWorldBD Offerings</span></div>
+        <h1 class="page-title" data-i18n="services_page_title">Digital Services & Starting Rates</h1>
+        <p class="page-subtitle" data-i18n="services_page_subtitle">
           Professional, mobile-optimized, and secure websites developed by SHAFAET HOSSEN SARIP. Transparent starting prices tailored for businesses and individuals in Bangladesh and worldwide.
         </p>
       </div>
@@ -64,14 +85,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳15,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Business Website</h3>
-            <p class="service-desc">Official corporative and business websites engineered for trust, presenting services, team credentials, lead forms, and brand identity.</p>
+            <h3 class="service-title" data-i18n="s_biz_title">Business Website</h3>
+            <p class="service-desc" data-i18n="s_biz_desc">Official corporative and business websites engineered for trust, presenting services, team credentials, lead forms, and brand identity.</p>
             <a href="start-project.html?service=Business%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -80,14 +101,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-cart-shopping"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳20,000+</span>
               </div>
             </div>
-            <h3 class="service-title">E-commerce Website</h3>
-            <p class="service-desc">Complete online retail storefronts with product showcases, shopping cart UI, customer orders, and checkout integration.</p>
+            <h3 class="service-title" data-i18n="s_ecom_title">E-commerce Website</h3>
+            <p class="service-desc" data-i18n="s_ecom_desc">Complete online retail storefronts with product showcases, shopping cart UI, customer orders, and checkout integration.</p>
             <a href="start-project.html?service=E-commerce%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -96,14 +117,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-user-gear"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳10,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Portfolio Website</h3>
-            <p class="service-desc">Sleek personal branding sites for freelancers, developers, artists, and executives to highlight work and experience.</p>
+            <h3 class="service-title" data-i18n="s_portfolio_title">Portfolio Website</h3>
+            <p class="service-desc" data-i18n="s_portfolio_desc">Sleek personal branding sites for freelancers, developers, artists, and executives to highlight work and experience.</p>
             <a href="start-project.html?service=Portfolio%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -112,14 +133,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-blog"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳12,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Blog Website</h3>
-            <p class="service-desc">Fast content platform designed for writers, reviewers, and niche publishers with categories, tags, and reading UI.</p>
+            <h3 class="service-title" data-i18n="s_blog_title">Blog Website</h3>
+            <p class="service-desc" data-i18n="s_blog_desc">Fast content platform designed for writers, reviewers, and niche publishers with categories, tags, and reading UI.</p>
             <a href="start-project.html?service=Blog%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -128,14 +149,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-newspaper"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳18,000+</span>
               </div>
             </div>
-            <h3 class="service-title">News Website</h3>
-            <p class="service-desc">High-capacity digital news portals featuring breaking news tickers, category channels, video integration, and search.</p>
+            <h3 class="service-title" data-i18n="s_news_title">News Website</h3>
+            <p class="service-desc" data-i18n="s_news_desc">High-capacity digital news portals featuring breaking news tickers, category channels, video integration, and search.</p>
             <a href="start-project.html?service=News%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -144,14 +165,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳15,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Educational Website</h3>
-            <p class="service-desc">Platforms for schools, coaching centers, and course creators to display syllabus, notices, and class materials.</p>
+            <h3 class="service-title" data-i18n="s_edu_title">Educational Website</h3>
+            <p class="service-desc" data-i18n="s_edu_desc">Platforms for schools, coaching centers, and course creators to display syllabus, notices, and class materials.</p>
             <a href="start-project.html?service=Educational%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -160,14 +181,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-users"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳20,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Social Media Website</h3>
-            <p class="service-desc">Community networking feeds with user profiles, activity timelines, messaging UI, and interaction modules.</p>
+            <h3 class="service-title" data-i18n="s_social_title">Social Media Website</h3>
+            <p class="service-desc" data-i18n="s_social_desc">Community networking feeds with user profiles, activity timelines, messaging UI, and interaction modules.</p>
             <a href="start-project.html?service=Social%20Media%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -176,14 +197,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳22,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Web App / SaaS</h3>
-            <p class="service-desc">Interactive software-as-a-service interfaces with web app navigation, dynamic state dashboards, and app experience.</p>
+            <h3 class="service-title" data-i18n="s_saas_title">Web App / SaaS</h3>
+            <p class="service-desc" data-i18n="s_saas_desc">Interactive software-as-a-service interfaces with web app navigation, dynamic state dashboards, and app experience.</p>
             <a href="start-project.html?service=Web%20App%20%2F%20SaaS" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -192,14 +213,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-calendar-check"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳15,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Booking Website</h3>
-            <p class="service-desc">Appointment scheduling and reservation platforms for medical consultations, salons, rentals, and services.</p>
+            <h3 class="service-title" data-i18n="s_booking_title">Booking Website</h3>
+            <p class="service-desc" data-i18n="s_booking_desc">Appointment scheduling and reservation platforms for medical consultations, salons, rentals, and services.</p>
             <a href="start-project.html?service=Booking%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -208,14 +229,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-store"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳15,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Marketplace Website</h3>
-            <p class="service-desc">Multi-vendor or directory platforms connecting sellers, service providers, and buyers with search filtering.</p>
+            <h3 class="service-title" data-i18n="s_market_title">Marketplace Website</h3>
+            <p class="service-desc" data-i18n="s_market_desc">Multi-vendor or directory platforms connecting sellers, service providers, and buyers with search filtering.</p>
             <a href="start-project.html?service=Marketplace%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -224,14 +245,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳12,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Forum / Community Website</h3>
-            <p class="service-desc">Discussion boards, Q&A portals, and interest communities structured around topics and member threads.</p>
+            <h3 class="service-title" data-i18n="s_forum_title">Forum / Community Website</h3>
+            <p class="service-desc" data-i18n="s_forum_desc">Discussion boards, Q&A portals, and interest communities structured around topics and member threads.</p>
             <a href="start-project.html?service=Forum%20%2F%20Community%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -240,14 +261,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-film"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳16,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Entertainment Website</h3>
-            <p class="service-desc">Media portals for videos, music, event streaming, and media showcases built for rich content viewing.</p>
+            <h3 class="service-title" data-i18n="s_ent_title">Entertainment Website</h3>
+            <p class="service-desc" data-i18n="s_ent_desc">Media portals for videos, music, event streaming, and media showcases built for rich content viewing.</p>
             <a href="start-project.html?service=Entertainment%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -256,14 +277,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳8,000+</span>
               </div>
             </div>
-            <h3 class="service-title">Landing Page</h3>
-            <p class="service-desc">Single-page marketing funnels engineered specifically to boost conversions, showcase a single product, or collect leads.</p>
+            <h3 class="service-title" data-i18n="s_landing_title">Landing Page</h3>
+            <p class="service-desc" data-i18n="s_landing_desc">Single-page marketing funnels engineered specifically to boost conversions, showcase a single product, or collect leads.</p>
             <a href="start-project.html?service=Landing%20Page" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -272,14 +293,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-building-columns"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Pricing Mode</span>
-                <span class="price-amount">Custom Pricing</span>
+                <span class="price-label" data-i18n="price_mode">Pricing Mode</span>
+                <span class="price-amount" data-i18n="price_custom">Custom Pricing</span>
               </div>
             </div>
-            <h3 class="service-title">Government Website</h3>
-            <p class="service-desc">Secure institutional portals compliant with accessibility, official documentation, notice publishing, and departmental structure.</p>
+            <h3 class="service-title" data-i18n="s_gov_title">Government Website</h3>
+            <p class="service-desc" data-i18n="s_gov_desc">Secure institutional portals compliant with accessibility, official documentation, notice publishing, and departmental structure.</p>
             <a href="start-project.html?service=Government%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -288,14 +309,14 @@
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
               <div class="service-price-tag">
-                <span class="price-label">Starting From</span>
+                <span class="price-label" data-i18n="price_starting">Starting From</span>
                 <span class="price-amount">৳14,000</span>
               </div>
             </div>
-            <h3 class="service-title">AI Website</h3>
-            <p class="service-desc">Smart sites incorporating artificial intelligence APIs, interactive AI tools, automated prompt generators, or chatbots.</p>
+            <h3 class="service-title" data-i18n="s_ai_title">AI Website</h3>
+            <p class="service-desc" data-i18n="s_ai_desc">Smart sites incorporating artificial intelligence APIs, interactive AI tools, automated prompt generators, or chatbots.</p>
             <a href="start-project.html?service=AI%20Website" class="btn btn-primary service-cta">
-              Start Project <i class="fa-solid fa-arrow-right"></i>
+              <span data-i18n="btn_start_service">Start Project</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
@@ -330,7 +351,7 @@
         </a>
       </div>
 
-      <p>© <span id="current-year"></span> WebWorldBD. Managed by <strong>SHAFAET HOSSEN SARIP</strong>. All rights reserved.</p>
+      <p>© <span id="current-year"></span> <span data-i18n="footer_rights">WebWorldBD. Managed by</span> <strong>SHAFAET HOSSEN SARIP</strong>. <span data-i18n="footer_all_rights">All rights reserved.</span></p>
     </div>
   </footer>
 
@@ -340,13 +361,13 @@
       <!-- 1. Home -->
       <a href="index.html" class="bottom-nav-item">
         <i class="fa-solid fa-house bottom-nav-icon"></i>
-        <span>Home</span>
+        <span data-i18n="nav_home">Home</span>
       </a>
 
       <!-- 2. Services -->
       <a href="services.html" class="bottom-nav-item active">
         <i class="fa-solid fa-layer-group bottom-nav-icon"></i>
-        <span>Services</span>
+        <span data-i18n="nav_services">Services</span>
       </a>
 
       <!-- 3. START PROJECT (Highlighted Center Button) -->
@@ -354,24 +375,25 @@
         <div class="bottom-nav-cta">
           <i class="fa-solid fa-rocket" style="font-size: 1.4rem;"></i>
         </div>
-        <span class="bottom-nav-cta-label">START PROJECT</span>
+        <span class="bottom-nav-cta-label" data-i18n="nav_start_project_caps">START PROJECT</span>
       </a>
 
       <!-- 4. Support -->
       <a href="support.html" class="bottom-nav-item">
         <i class="fa-solid fa-headset bottom-nav-icon"></i>
-        <span>Support</span>
+        <span data-i18n="nav_support">Support</span>
       </a>
 
       <!-- 5. Account -->
       <a href="account.html" class="bottom-nav-item">
         <i class="fa-solid fa-user bottom-nav-icon"></i>
-        <span>Account</span>
+        <span data-i18n="nav_account">Account</span>
       </a>
     </div>
   </nav>
 
   <!-- JavaScript -->
+  <script src="js/translations.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

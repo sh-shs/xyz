@@ -7,10 +7,21 @@
   <meta name="keywords" content="SHAFAET HOSSEN SARIP, WebWorldBD, Website Developer, App Developer, Kushtia, Bangladesh, Full Stack Developer, Web Application">
   <title>SHAFAET HOSSEN SARIP | Website & App Developer | WebWorldBD</title>
 
+  <!-- Early Theme Init Script -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('webworldbd_theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom CSS -->
@@ -29,16 +40,26 @@
 
       <nav class="desktop-nav" aria-label="Desktop Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-          <li><a href="support.html" class="nav-link">Support</a></li>
-          <li><a href="account.html" class="nav-link">Account</a></li>
+          <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></li>
+          <li><a href="services.html" class="nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="index.html#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="support.html" class="nav-link" data-i18n="nav_support">Support</a></li>
+          <li><a href="account.html" class="nav-link" data-i18n="nav_account">Account</a></li>
         </ul>
         <a href="start-project.html" class="btn btn-primary">
-          <i class="fa-solid fa-rocket"></i> Start Project
+          <i class="fa-solid fa-rocket"></i> <span data-i18n="nav_start_project">Start Project</span>
         </a>
       </nav>
+
+      <!-- Theme & Language Switcher Controls -->
+      <div class="header-controls">
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Switch Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button type="button" class="lang-toggle-btn" id="langToggleBtn" aria-label="Switch Language" title="Switch Language">
+          <span class="lang-en active">EN</span> | <span class="lang-bn">বাংলা</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -49,34 +70,34 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="section-tag">
-            <i class="fa-solid fa-code"></i> Professional Developer Profile
+            <i class="fa-solid fa-code"></i> <span data-i18n="hero_tag">Professional Developer Profile</span>
           </div>
           <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">SHAFAET HOSSEN SARIP</span>
+            <span data-i18n="hero_title_greeting">Hi, I'm </span><span class="gradient-text">SHAFAET HOSSEN SARIP</span>
           </h1>
-          <p class="hero-subtitle">
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
             Website & App Developer based in Kushtia, Khulna, Bangladesh. Crafting high-performance web applications, modern responsive websites, and custom digital platforms engineered for growth.
           </p>
           <div class="hero-ctas">
             <a href="start-project.html" class="btn btn-primary">
-              <i class="fa-solid fa-paper-plane"></i> Start a Project
+              <i class="fa-solid fa-paper-plane"></i> <span data-i18n="hero_cta_start">Start a Project</span>
             </a>
             <a href="services.html" class="btn btn-secondary">
-              <i class="fa-solid fa-layer-group"></i> Explore Services
+              <i class="fa-solid fa-layer-group"></i> <span data-i18n="hero_cta_services">Explore Services</span>
             </a>
           </div>
           <div class="hero-stats">
             <div class="stat-item">
-              <h4>1+ Year</h4>
-              <p>Active Experience</p>
+              <h4 data-i18n="hero_stat_exp_val">1+ Year</h4>
+              <p data-i18n="hero_stat_exp">Active Experience</p>
             </div>
             <div class="stat-item">
-              <h4>100%</h4>
-              <p>Client Satisfaction</p>
+              <h4 data-i18n="hero_stat_sat_val">100%</h4>
+              <p data-i18n="hero_stat_sat">Client Satisfaction</p>
             </div>
             <div class="stat-item">
-              <h4>Modern</h4>
-              <p>Tech Stack</p>
+              <h4 data-i18n="hero_stat_tech_val">Modern</h4>
+              <p data-i18n="hero_stat_tech">Tech Stack</p>
             </div>
           </div>
         </div>
@@ -89,10 +110,10 @@
               </div>
             </div>
             <h2 class="profile-name">SHAFAET HOSSEN SARIP</h2>
-            <p class="profile-role">Website & App Developer</p>
-            <p class="profile-location"><i class="fa-solid fa-location-dot"></i> Kushtia, Khulna, Bangladesh</p>
+            <p class="profile-role" data-i18n="profile_role">Website & App Developer</p>
+            <p class="profile-location"><i class="fa-solid fa-location-dot"></i> <span data-i18n="profile_loc">Kushtia, Khulna, Bangladesh</span></p>
             <div class="status-badge" style="margin-top: 1rem;">
-              <span class="status-dot"></span> Available for Freelance & Custom Projects
+              <span class="status-dot"></span> <span data-i18n="profile_status">Available for Freelance & Custom Projects</span>
             </div>
           </div>
         </div>
@@ -103,31 +124,31 @@
     <section class="section" id="about">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag"><i class="fa-solid fa-user"></i> Personal Profile</div>
-          <h2 class="section-title">About Me</h2>
-          <p class="section-subtitle">A passionate developer dedicated to building high-quality, modern web solutions.</p>
+          <div class="section-tag"><i class="fa-solid fa-user"></i> <span data-i18n="about_tag">Personal Profile</span></div>
+          <h2 class="section-title" data-i18n="about_title">About Me</h2>
+          <p class="section-subtitle" data-i18n="about_subtitle">A passionate developer dedicated to building high-quality, modern web solutions.</p>
         </div>
 
         <div class="about-grid">
           <div class="about-card">
-            <h3 class="about-card-title"><i class="fa-solid fa-graduation-cap gradient-text"></i> My Background</h3>
+            <h3 class="about-card-title"><i class="fa-solid fa-graduation-cap gradient-text"></i> <span data-i18n="about_bg_title">My Background</span></h3>
             <p class="about-text">
-              I am <strong>SHAFAET HOSSEN SARIP</strong>, a tech enthusiast and developer from Kushtia, Bangladesh. I am currently pursuing my studies in the <strong>Electronics Department at Kushtia Polytechnic Institute</strong>.
+              <span data-i18n="about_bg_p1_before">I am </span><strong>SHAFAET HOSSEN SARIP</strong><span data-i18n="about_bg_p1_after">, a tech enthusiast and developer from Kushtia, Bangladesh. I am currently pursuing my studies in the </span><strong data-i18n="about_bg_dept">Electronics Department at Kushtia Polytechnic Institute</strong>.
             </p>
-            <p class="about-text" style="margin-top: 1rem;">
+            <p class="about-text" style="margin-top: 1rem;" data-i18n="about_bg_p2">
               My deep passion for web development inspired me to dive into software creation over a year ago. Since then, I have been actively designing, building, and delivering bespoke web applications for clients and personal initiatives.
             </p>
           </div>
 
           <div class="about-card">
-            <h3 class="about-card-title"><i class="fa-solid fa-shield-halved gradient-text"></i> Development Ethics & Vision</h3>
+            <h3 class="about-card-title"><i class="fa-solid fa-shield-halved gradient-text"></i> <span data-i18n="about_ethics_title">Development Ethics & Vision</span></h3>
             <p class="about-text">
-              Through my brand <strong>WebWorldBD</strong>, I focus on delivering reliable, accessible, and fast digital platforms tailored precisely to client requirements—ranging from small business sites to full-scale e-commerce architectures.
+              <span data-i18n="about_ethics_p1_before">Through my brand </span><strong>WebWorldBD</strong><span data-i18n="about_ethics_p1_after">, I focus on delivering reliable, accessible, and fast digital platforms tailored precisely to client requirements—ranging from small business sites to full-scale e-commerce architectures.</span>
             </p>
 
             <div class="ethical-notice">
               <i class="fa-solid fa-circle-check"></i>
-              <span><strong>Ethical Commitment:</strong> I strictly build positive, business-oriented web applications and <em>do not develop gambling or betting websites</em>.</span>
+              <span><strong data-i18n="about_ethical_commitment_label">Ethical Commitment:</strong> <span data-i18n="about_ethical_commitment_text">I strictly build positive, business-oriented web applications and do not develop gambling or betting websites.</span></span>
             </div>
           </div>
         </div>
@@ -138,46 +159,46 @@
     <section class="section bg-surface-section" id="skills">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag"><i class="fa-solid fa-laptop-code"></i> Expertise</div>
-          <h2 class="section-title">Technologies & Skills</h2>
-          <p class="section-subtitle">Modern tools and frameworks I use to build robust, scalable applications.</p>
+          <div class="section-tag"><i class="fa-solid fa-laptop-code"></i> <span data-i18n="skills_tag">Expertise</span></div>
+          <h2 class="section-title" data-i18n="skills_title">Technologies & Skills</h2>
+          <p class="section-subtitle" data-i18n="skills_subtitle">Modern tools and frameworks I use to build robust, scalable applications.</p>
         </div>
 
         <div class="skills-grid">
           <div class="skill-card">
             <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
             <h4>HTML5 & CSS3</h4>
-            <p>Semantic markup, flexbox, CSS grid, animations, and mobile-first responsive design system.</p>
+            <p data-i18n="skill_html_desc">Semantic markup, flexbox, CSS grid, animations, and mobile-first responsive design system.</p>
           </div>
 
           <div class="skill-card">
             <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
             <h4>JavaScript (ES6+)</h4>
-            <p>Vanilla JavaScript DOM manipulation, asynchronous programming, APIs, and state handling.</p>
+            <p data-i18n="skill_js_desc">Vanilla JavaScript DOM manipulation, asynchronous programming, APIs, and state handling.</p>
           </div>
 
           <div class="skill-card">
             <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
             <h4>Python</h4>
-            <p>Scripting, backend logic, data structuring, and automated data processing.</p>
+            <p data-i18n="skill_python_desc">Scripting, backend logic, data structuring, and automated data processing.</p>
           </div>
 
           <div class="skill-card">
             <div class="skill-icon"><i class="fa-brands fa-node-js"></i></div>
             <h4>Node.js</h4>
-            <p>Server-side runtime environments, API integrations, and backend routing execution.</p>
+            <p data-i18n="skill_node_desc">Server-side runtime environments, API integrations, and backend routing execution.</p>
           </div>
 
           <div class="skill-card">
             <div class="skill-icon"><i class="fa-solid fa-fire"></i></div>
             <h4>Firebase & Auth</h4>
-            <p>Database management, authentication systems, cloud storage, and hosting deployment.</p>
+            <p data-i18n="skill_firebase_desc">Database management, authentication systems, cloud storage, and hosting deployment.</p>
           </div>
 
           <div class="skill-card">
             <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
-            <h4>Databases & Data Management</h4>
-            <p>Database modeling, structured data storage, automated Excel salary sheets, and reporting tools.</p>
+            <h4 data-i18n="skill_db_title">Databases & Data Management</h4>
+            <p data-i18n="skill_db_desc">Database modeling, structured data storage, automated Excel salary sheets, and reporting tools.</p>
           </div>
         </div>
       </div>
@@ -187,34 +208,34 @@
     <section class="section" id="experience">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag"><i class="fa-solid fa-briefcase"></i> Experience & Capabilities</div>
-          <h2 class="section-title">What I Do</h2>
-          <p class="section-subtitle">Delivering end-to-end digital services tailored to client vision and technical needs.</p>
+          <div class="section-tag"><i class="fa-solid fa-briefcase"></i> <span data-i18n="exp_tag">Experience & Capabilities</span></div>
+          <h2 class="section-title" data-i18n="exp_title">What I Do</h2>
+          <p class="section-subtitle" data-i18n="exp_subtitle">Delivering end-to-end digital services tailored to client vision and technical needs.</p>
         </div>
 
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
-            <h3 class="feature-title">Custom Website Development</h3>
-            <p class="feature-desc">Building tailored websites for businesses, portfolios, blogs, news portals, landing pages, and institutional platforms.</p>
+            <h3 class="feature-title" data-i18n="exp_custom_title">Custom Website Development</h3>
+            <p class="feature-desc" data-i18n="exp_custom_desc">Building tailored websites for businesses, portfolios, blogs, news portals, landing pages, and institutional platforms.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-            <h3 class="feature-title">E-Commerce & Marketplaces</h3>
-            <p class="feature-desc">Designing online stores with intuitive browsing, product showcase grids, search filtering, and user-friendly checkout flows.</p>
+            <h3 class="feature-title" data-i18n="exp_ecom_title">E-Commerce & Marketplaces</h3>
+            <p class="feature-desc" data-i18n="exp_ecom_desc">Designing online stores with intuitive browsing, product showcase grids, search filtering, and user-friendly checkout flows.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-            <h3 class="feature-title">Web Application & SaaS UI</h3>
-            <p class="feature-desc">Developing web apps with native-feeling mobile bottom navigation, interactive interfaces, and seamless page transitions.</p>
+            <h3 class="feature-title" data-i18n="exp_webapp_title">Web Application & SaaS UI</h3>
+            <p class="feature-desc" data-i18n="exp_webapp_desc">Developing web apps with native-feeling mobile bottom navigation, interactive interfaces, and seamless page transitions.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon"><i class="fa-solid fa-table-list"></i></div>
-            <h3 class="feature-title">Data Solutions & Custom Calculators</h3>
-            <p class="feature-desc">Expert Excel data management, automated salary sheet calculators, and structured data handling systems.</p>
+            <h3 class="feature-title" data-i18n="exp_data_title">Data Solutions & Custom Calculators</h3>
+            <p class="feature-desc" data-i18n="exp_data_desc">Expert Excel data management, automated salary sheet calculators, and structured data handling systems.</p>
           </div>
         </div>
       </div>
@@ -224,9 +245,9 @@
     <section class="section bg-surface-section" id="projects">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag"><i class="fa-solid fa-folder-open"></i> Portfolio</div>
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-subtitle">Real live projects developed and deployed by SHAFAET HOSSEN SARIP.</p>
+          <div class="section-tag"><i class="fa-solid fa-folder-open"></i> <span data-i18n="projects_tag">Portfolio</span></div>
+          <h2 class="section-title" data-i18n="projects_title">Featured Projects</h2>
+          <p class="section-subtitle" data-i18n="projects_subtitle">Real live projects developed and deployed by SHAFAET HOSSEN SARIP.</p>
         </div>
 
         <div class="projects-grid">
@@ -234,14 +255,14 @@
           <div class="project-card">
             <div class="project-preview">
               <i class="fa-solid fa-user-astronaut"></i>
-              <span class="project-badge">Personal Website</span>
+              <span class="project-badge" data-i18n="project1_badge">Personal Website</span>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Personal Profile Website</h3>
-              <p class="project-desc">A custom personal branding website showcasing developer background, qualifications, and project portfolio.</p>
+              <h3 class="project-title" data-i18n="project1_title">Personal Profile Website</h3>
+              <p class="project-desc" data-i18n="project1_desc">A custom personal branding website showcasing developer background, qualifications, and project portfolio.</p>
               <div class="project-actions">
                 <a href="https://sh-shs.github.io/shsarip/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Live Site
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="project1_btn">Visit Live Site</span>
                 </a>
               </div>
             </div>
@@ -251,14 +272,14 @@
           <div class="project-card">
             <div class="project-preview">
               <i class="fa-solid fa-cart-flatbed"></i>
-              <span class="project-badge">E-commerce Website</span>
+              <span class="project-badge" data-i18n="project2_badge">E-commerce Website</span>
             </div>
             <div class="project-content">
-              <h3 class="project-title">SHS Bazar</h3>
-              <p class="project-desc">This is my e-commerce business website where customers from Bangladesh can browse and purchase products at competitive prices with a focus on trust and affordability.</p>
+              <h3 class="project-title" data-i18n="project2_title">SHS Bazar</h3>
+              <p class="project-desc" data-i18n="project2_desc">This is my e-commerce business website where customers from Bangladesh can browse and purchase products at competitive prices with a focus on trust and affordability.</p>
               <div class="project-actions">
                 <a href="https://sh-shs.github.io/shs-bazar/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit SHS Bazar
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="project2_btn">Visit SHS Bazar</span>
                 </a>
               </div>
             </div>
@@ -272,15 +293,15 @@
       <div class="container">
         <div class="cta-banner">
           <div class="cta-banner-content">
-            <span class="section-tag"><i class="fa-solid fa-cubes"></i> WebWorldBD Services</span>
-            <h2>Need a Website or Custom Web App?</h2>
-            <p>From business sites starting at ৳15,000 to custom e-commerce and SaaS apps, explore my complete service offerings or request a custom quote.</p>
+            <span class="section-tag"><i class="fa-solid fa-cubes"></i> <span data-i18n="cta_tag">WebWorldBD Services</span></span>
+            <h2 data-i18n="cta_title">Need a Website or Custom Web App?</h2>
+            <p data-i18n="cta_desc">From business sites starting at ৳15,000 to custom e-commerce and SaaS apps, explore my complete service offerings or request a custom quote.</p>
             <div class="cta-banner-buttons">
               <a href="services.html" class="btn btn-primary">
-                <i class="fa-solid fa-list-check"></i> View All Services & Pricing
+                <i class="fa-solid fa-list-check"></i> <span data-i18n="cta_btn_all">View All Services & Pricing</span>
               </a>
               <a href="start-project.html" class="btn btn-secondary">
-                <i class="fa-solid fa-paper-plane"></i> Request Project
+                <i class="fa-solid fa-paper-plane"></i> <span data-i18n="cta_btn_request">Request Project</span>
               </a>
             </div>
           </div>
@@ -315,7 +336,7 @@
         </a>
       </div>
 
-      <p>© <span id="current-year"></span> WebWorldBD. Managed by <strong>SHAFAET HOSSEN SARIP</strong>. All rights reserved.</p>
+      <p>© <span id="current-year"></span> <span data-i18n="footer_rights">WebWorldBD. Managed by</span> <strong>SHAFAET HOSSEN SARIP</strong>. <span data-i18n="footer_all_rights">All rights reserved.</span></p>
     </div>
   </footer>
 
@@ -325,13 +346,13 @@
       <!-- 1. Home -->
       <a href="index.html" class="bottom-nav-item active">
         <i class="fa-solid fa-house bottom-nav-icon"></i>
-        <span>Home</span>
+        <span data-i18n="nav_home">Home</span>
       </a>
 
       <!-- 2. Services -->
       <a href="services.html" class="bottom-nav-item">
         <i class="fa-solid fa-layer-group bottom-nav-icon"></i>
-        <span>Services</span>
+        <span data-i18n="nav_services">Services</span>
       </a>
 
       <!-- 3. START PROJECT (Highlighted Center Button) -->
@@ -339,24 +360,25 @@
         <div class="bottom-nav-cta">
           <i class="fa-solid fa-rocket" style="font-size: 1.4rem;"></i>
         </div>
-        <span class="bottom-nav-cta-label">START PROJECT</span>
+        <span class="bottom-nav-cta-label" data-i18n="nav_start_project_caps">START PROJECT</span>
       </a>
 
       <!-- 4. Support -->
       <a href="support.html" class="bottom-nav-item">
         <i class="fa-solid fa-headset bottom-nav-icon"></i>
-        <span>Support</span>
+        <span data-i18n="nav_support">Support</span>
       </a>
 
       <!-- 5. Account -->
       <a href="account.html" class="bottom-nav-item">
         <i class="fa-solid fa-user bottom-nav-icon"></i>
-        <span>Account</span>
+        <span data-i18n="nav_account">Account</span>
       </a>
     </div>
   </nav>
 
   <!-- JavaScript -->
+  <script src="js/translations.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
