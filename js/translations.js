@@ -99,7 +99,7 @@ const translations = {
     "price_starting": "Starting From",
     "price_mode": "Pricing Mode",
     "price_custom": "Custom Pricing",
-    "btn_start_service": "Start Project",
+    "btn_start_service": "View Project Details",
 
     // Services Names & Descriptions
     "s_biz_title": "Business Website",
@@ -328,7 +328,7 @@ const translations = {
     "price_starting": "শুরু হচ্ছে",
     "price_mode": "প্রাইসিং মোড",
     "price_custom": "কাস্টম প্রাইসিং",
-    "btn_start_service": "প্রজেক্ট শুরু করুন",
+    "btn_start_service": "প্রজেক্ট সম্পর্কে বিস্তারিত জানুন",
 
     // Services Names & Descriptions
     "s_biz_title": "বিজনেস ওয়েবসাইট",
