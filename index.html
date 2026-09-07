@@ -48,7 +48,7 @@
         </a>
       </nav>
 
-      <!-- Theme & Language Switcher Controls -->
+      <!-- Theme, Language & Settings Controls -->
       <div class="header-controls">
         <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Switch Theme">
           <i class="fa-solid fa-moon"></i>
@@ -56,9 +56,104 @@
         <button type="button" class="lang-toggle-btn" id="langToggleBtn" aria-label="Switch Language" title="Switch Language">
           <span class="lang-en active">EN</span> | <span class="lang-bn">বাংলা</span>
         </button>
+        <button type="button" class="settings-toggle-btn" id="settingsToggleBtn" aria-label="Settings" title="Settings" aria-expanded="false" aria-controls="settingsPanel">
+          <i class="fa-solid fa-gear"></i>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- SETTINGS PANEL & BACKDROP -->
+  <div class="settings-backdrop" id="settingsBackdrop"></div>
+  <div class="settings-panel" id="settingsPanel" role="dialog" aria-modal="true" aria-labelledby="settingsPanelTitle">
+    <div class="settings-header">
+      <h3 class="settings-title" id="settingsPanelTitle">
+        <i class="fa-solid fa-gear gradient-text"></i>
+        <span data-i18n="settings_title">Settings</span>
+      </h3>
+      <button type="button" class="settings-close-btn" id="settingsCloseBtn" aria-label="Close Settings">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="settings-body">
+      <!-- 1. Theme Section -->
+      <div class="settings-section">
+        <div class="settings-section-header">
+          <i class="fa-solid fa-circle-half-stroke settings-icon"></i>
+          <div>
+            <h4 data-i18n="settings_theme_title">Theme</h4>
+            <p data-i18n="settings_theme_desc">Switch between light and dark mode</p>
+          </div>
+        </div>
+        <div class="settings-options">
+          <button type="button" class="theme-toggle-btn btn btn-secondary btn-sm settings-opt-btn" id="settingsThemeToggle">
+            <i class="fa-solid fa-moon"></i>
+            <span class="theme-btn-label" data-i18n="theme_dark">Dark Mode</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. Language Section -->
+      <div class="settings-section">
+        <div class="settings-section-header">
+          <i class="fa-solid fa-language settings-icon"></i>
+          <div>
+            <h4 data-i18n="settings_lang_title">Language</h4>
+            <p data-i18n="settings_lang_desc">Select preferred display language</p>
+          </div>
+        </div>
+        <div class="settings-lang-switchers">
+          <button type="button" class="settings-lang-btn active" data-lang="en">
+            <span data-i18n="settings_lang_en">English (EN)</span>
+          </button>
+          <button type="button" class="settings-lang-btn" data-lang="bn">
+            <span data-i18n="settings_lang_bn">বাংলা (BN)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Quick Contact Shortcuts -->
+      <div class="settings-section">
+        <div class="settings-section-header">
+          <i class="fa-solid fa-headset settings-icon"></i>
+          <div>
+            <h4 data-i18n="settings_contact_title">Quick Contact</h4>
+            <p data-i18n="settings_contact_desc">Get instant support via WhatsApp, Email, or Call</p>
+          </div>
+        </div>
+        <div class="settings-contact-links">
+          <a href="https://wa.me/8801342697743" target="_blank" rel="noopener noreferrer" class="settings-contact-item">
+            <i class="fa-brands fa-whatsapp wa-icon"></i>
+            <span data-i18n="settings_contact_wa">WhatsApp Chat</span>
+            <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+          </a>
+          <a href="mailto:saripofficialsupport@gmail.com" class="settings-contact-item">
+            <i class="fa-solid fa-envelope email-icon"></i>
+            <span data-i18n="settings_contact_email">Email Support</span>
+            <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+          </a>
+          <a href="tel:+8801342697743" class="settings-contact-item">
+            <i class="fa-solid fa-phone phone-icon"></i>
+            <span data-i18n="settings_contact_phone">Call Hotline</span>
+            <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. About & Version Info -->
+      <div class="settings-section settings-about-section">
+        <div class="settings-section-header">
+          <i class="fa-solid fa-circle-info settings-icon"></i>
+          <div>
+            <h4 data-i18n="settings_about_title">About Website</h4>
+            <strong class="settings-brand-name" data-i18n="settings_about_brand">WebWorldBD © 2026</strong>
+          </div>
+        </div>
+        <p class="settings-about-text" data-i18n="settings_about_desc">Managed by SHAFAET HOSSEN SARIP. High-performance custom web development and digital solutions.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- MAIN CONTENT -->
   <main>

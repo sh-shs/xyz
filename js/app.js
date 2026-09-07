@@ -25,16 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
     themeToggleBtns.forEach(btn => {
       const icon = btn.querySelector('i');
+      const labelSpan = btn.querySelector('.theme-btn-label');
       if (theme === 'light') {
         if (icon) icon.className = 'fa-solid fa-sun';
+        if (labelSpan) labelSpan.setAttribute('data-i18n', 'theme_light');
         btn.setAttribute('aria-label', 'Switch to Dark Mode');
         btn.setAttribute('title', 'Switch to Dark Mode');
       } else {
         if (icon) icon.className = 'fa-solid fa-moon';
+        if (labelSpan) labelSpan.setAttribute('data-i18n', 'theme_dark');
         btn.setAttribute('aria-label', 'Switch to Light Mode');
         btn.setAttribute('title', 'Switch to Light Mode');
       }
     });
+
+    // Re-apply language translations to update labels
+    const activeLang = localStorage.getItem('webworldbd_lang') || 'en';
+    if (typeof applyLanguage === 'function') {
+      applyLanguage(activeLang);
+    }
   }
 
   // Initialize theme
@@ -118,6 +127,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
+
+    // Update settings panel language switcher buttons
+    const settingsLangBtns = document.querySelectorAll('.settings-lang-btn');
+    settingsLangBtns.forEach(btn => {
+      if (btn.getAttribute('data-lang') === lang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
   }
 
   // Initialize language
@@ -136,7 +155,89 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ==========================================================================
-     3. UTILITIES & FORM LOGIC
+     3. SETTINGS PANEL INTERACTIVE LOGIC
+     ========================================================================== */
+  const settingsToggleBtn = document.getElementById('settingsToggleBtn');
+  const settingsCloseBtn = document.getElementById('settingsCloseBtn');
+  const settingsPanel = document.getElementById('settingsPanel');
+  const settingsBackdrop = document.getElementById('settingsBackdrop');
+
+  function openSettingsPanel() {
+    if (settingsPanel && settingsBackdrop) {
+      settingsPanel.classList.add('active');
+      settingsBackdrop.classList.add('active');
+      if (settingsToggleBtn) {
+        settingsToggleBtn.classList.add('active');
+        settingsToggleBtn.setAttribute('aria-expanded', 'true');
+      }
+    }
+  }
+
+  function closeSettingsPanel() {
+    if (settingsPanel && settingsBackdrop) {
+      settingsPanel.classList.remove('active');
+      settingsBackdrop.classList.remove('active');
+      if (settingsToggleBtn) {
+        settingsToggleBtn.classList.remove('active');
+        settingsToggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+  }
+
+  function toggleSettingsPanel() {
+    if (settingsPanel && settingsPanel.classList.contains('active')) {
+      closeSettingsPanel();
+    } else {
+      openSettingsPanel();
+    }
+  }
+
+  if (settingsToggleBtn) {
+    settingsToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleSettingsPanel();
+    });
+  }
+
+  if (settingsCloseBtn) {
+    settingsCloseBtn.addEventListener('click', closeSettingsPanel);
+  }
+
+  if (settingsBackdrop) {
+    settingsBackdrop.addEventListener('click', closeSettingsPanel);
+  }
+
+  // Close panel when clicking outside on desktop
+  document.addEventListener('click', (e) => {
+    if (settingsPanel && settingsPanel.classList.contains('active')) {
+      const isClickInside = settingsPanel.contains(e.target) || (settingsToggleBtn && settingsToggleBtn.contains(e.target));
+      if (!isClickInside) {
+        closeSettingsPanel();
+      }
+    }
+  });
+
+  // Close panel on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && settingsPanel && settingsPanel.classList.contains('active')) {
+      closeSettingsPanel();
+    }
+  });
+
+  // Listener for language switch buttons inside settings panel
+  document.addEventListener('click', (e) => {
+    const langSwitchBtn = e.target.closest('.settings-lang-btn');
+    if (langSwitchBtn) {
+      const selectedLang = langSwitchBtn.getAttribute('data-lang');
+      if (selectedLang) {
+        applyLanguage(selectedLang);
+      }
+    }
+  });
+
+
+  /* ==========================================================================
+     4. UTILITIES & FORM LOGIC
      ========================================================================== */
 
   // 3.1 Dynamic Footer Year Update
