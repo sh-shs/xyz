@@ -14,11 +14,26 @@ const translations = {
     "nav_start_project": "Start Project",
     "nav_start_project_caps": "START PROJECT",
 
-    // Header Controls
+    // Header Controls & Settings Panel
     "theme_light": "Light Mode",
     "theme_dark": "Dark Mode",
     "lang_en": "English",
     "lang_bn": "বাংলা",
+    "settings_title": "Settings",
+    "settings_theme_title": "Theme",
+    "settings_theme_desc": "Switch between light and dark mode",
+    "settings_lang_title": "Language",
+    "settings_lang_desc": "Select preferred display language",
+    "settings_lang_en": "English (EN)",
+    "settings_lang_bn": "বাংলা (BN)",
+    "settings_contact_title": "Quick Contact",
+    "settings_contact_desc": "Get instant support via WhatsApp, Email, or Call",
+    "settings_contact_wa": "WhatsApp Chat",
+    "settings_contact_email": "Email Support",
+    "settings_contact_phone": "Call Hotline",
+    "settings_about_title": "About Website",
+    "settings_about_brand": "WebWorldBD © 2026",
+    "settings_about_desc": "Managed by SHAFAET HOSSEN SARIP. High-performance custom web development and digital solutions.",
 
     // Hero Section (Index)
     "hero_tag": "Professional Developer Profile",
@@ -243,11 +258,26 @@ const translations = {
     "nav_start_project": "প্রজেক্ট শুরু করুন",
     "nav_start_project_caps": "প্রজেক্ট শুরু করুন",
 
-    // Header Controls
+    // Header Controls & Settings Panel
     "theme_light": "লাইট মোড",
     "theme_dark": "ডার্ক মোড",
     "lang_en": "English",
     "lang_bn": "বাংলা",
+    "settings_title": "সেটিংস",
+    "settings_theme_title": "থিম",
+    "settings_theme_desc": "লাইট ও ডার্ক মোডের মধ্যে পরিবর্তন করুন",
+    "settings_lang_title": "ভাষা",
+    "settings_lang_desc": "পছন্দের ডিসপ্লে ভাষা নির্বাচন করুন",
+    "settings_lang_en": "English (EN)",
+    "settings_lang_bn": "বাংলা (BN)",
+    "settings_contact_title": "দ্রুত যোগাযোগ",
+    "settings_contact_desc": "হোয়াটসঅ্যাপ, ইমেইল বা কলে সরাসরি যোগাযোগ করুন",
+    "settings_contact_wa": "হোয়াটসঅ্যাপ চ্যাট",
+    "settings_contact_email": "ইমেইল সাপোর্ট",
+    "settings_contact_phone": "কল করুন",
+    "settings_about_title": "ওয়েবসাইট সম্পর্কে",
+    "settings_about_brand": "WebWorldBD © 2026",
+    "settings_about_desc": "পরিচালনায় শাফায়াত হোসেন সারিপ। উচ্চমানের কাস্টম ওয়েব ডেভেলপমেন্ট ও ডিজিটাল সমাধান।",
 
     // Hero Section (Index)
     "hero_tag": "প্রফেশনাল ডেভেলপার প্রোফাইল",
