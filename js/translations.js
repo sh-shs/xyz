@@ -133,6 +133,19 @@ const translations = {
     "s_ai_title": "AI Website",
     "s_ai_desc": "Smart sites incorporating artificial intelligence APIs, interactive AI tools, automated prompt generators, or chatbots.",
 
+    // Occasion / Event Websites Section
+    "s_occasion_tag": "Special Occasions",
+    "s_occasion_section_title": "Occasion / Event Websites",
+    "s_occasion_section_subtitle": "Affordable, customized websites designed for celebrating special personal moments, surprises, and events.",
+    "s_birthday_title": "Birthday Website",
+    "s_birthday_desc": "Custom surprise website to celebrate a loved one's birthday.",
+    "s_love_title": "Love Website",
+    "s_love_desc": "Romantic-themed custom website for your loved one.",
+    "s_proposal_title": "Proposal Website",
+    "s_proposal_desc": "Special custom website designed for making a proposal.",
+    "s_friendship_title": "Friendship Website",
+    "s_friendship_desc": "Custom website designed to celebrate friendship.",
+
     // Start Project Page
     "sp_tag": "Request Form",
     "sp_title": "Start Your Project",
@@ -353,6 +366,19 @@ const translations = {
     "s_gov_desc": "অফিসিয়াল ডকুমেন্টস, নোটিশ প্রকাশ ও প্রাতিষ্ঠানিক কাঠামোর নিরাপদ সরকারি সাইট।",
     "s_ai_title": "এআই (AI) ওয়েবসাইট",
     "s_ai_desc": "কৃত্রিম বুদ্ধিমত্তা এপিআই, এআই টুলস, প্রম্পট জেনারেটর কিংবা চ্যাটবট সম্বলিত স্মার্ট ওয়েবসাইট।",
+
+    // Occasion / Event Websites Section
+    "s_occasion_tag": "বিশেষ অকেশন",
+    "s_occasion_section_title": "অকেশন / ইভেন্ট ওয়েবসাইট",
+    "s_occasion_section_subtitle": "ব্যক্তিগত বিশেষ মুহূর্ত, সারপ্রাইজ ও উৎসব উদযাপনের জন্য সাশ্রয়ী মূল্যের কাস্টম ওয়েবসাইট।",
+    "s_birthday_title": "বার্থডে ওয়েবসাইট",
+    "s_birthday_desc": "প্রিয়জনের জন্মদিন উদযাপনের জন্য কাস্টম সারপ্রাইজ ওয়েবসাইট",
+    "s_love_title": "লাভ ওয়েবসাইট",
+    "s_love_desc": "ভালোবাসার মানুষের জন্য রোমান্টিক থিমের কাস্টম ওয়েবসাইট",
+    "s_proposal_title": "প্রপোজাল ওয়েবসাইট",
+    "s_proposal_desc": "প্রপোজ করার জন্য বিশেষ কাস্টম ওয়েবসাইট",
+    "s_friendship_title": "ফ্রেন্ডশিপ ওয়েবসাইট",
+    "s_friendship_desc": "বন্ধুত্ব উদযাপনের জন্য কাস্টম ওয়েবসাইট",
 
     // Start Project Page
     "sp_tag": "রিকোয়েস্ট ফর্ম",
