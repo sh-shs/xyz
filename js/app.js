@@ -5,67 +5,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
-     1. THEME SWITCHING SYSTEM (DARK / LIGHT MODE)
+     1. SHARED CONSTANTS & UTILITIES
      ========================================================================== */
   const THEME_KEY = 'webworldbd_theme';
-
-  function getPreferredTheme() {
-    const savedTheme = localStorage.getItem(THEME_KEY);
-    if (savedTheme) {
-      return savedTheme;
-    }
-    return 'light'; // Default initial theme
-  }
-
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem(THEME_KEY, theme);
-
-    // Update all theme toggle buttons
-    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
-    themeToggleBtns.forEach(btn => {
-      const icon = btn.querySelector('i');
-      const labelSpan = btn.querySelector('.theme-btn-label');
-      if (theme === 'light') {
-        if (icon) icon.className = 'fa-solid fa-sun';
-        if (labelSpan) labelSpan.setAttribute('data-i18n', 'theme_light');
-        btn.setAttribute('aria-label', 'Switch to Dark Mode');
-        btn.setAttribute('title', 'Switch to Dark Mode');
-      } else {
-        if (icon) icon.className = 'fa-solid fa-moon';
-        if (labelSpan) labelSpan.setAttribute('data-i18n', 'theme_dark');
-        btn.setAttribute('aria-label', 'Switch to Light Mode');
-        btn.setAttribute('title', 'Switch to Light Mode');
-      }
-    });
-
-    // Re-apply language translations to update labels
-    const activeLang = localStorage.getItem('webworldbd_lang') || 'en';
-    if (typeof applyLanguage === 'function') {
-      applyLanguage(activeLang);
-    }
-  }
-
-  // Initialize theme
-  const currentTheme = getPreferredTheme();
-  applyTheme(currentTheme);
-
-  // Global listener for theme toggle buttons
-  document.addEventListener('click', (e) => {
-    const toggleBtn = e.target.closest('.theme-toggle-btn');
-    if (toggleBtn) {
-      const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme);
-    }
-  });
-
+  const LANG_KEY = 'webworldbd_lang';
 
   /* ==========================================================================
      2. LANGUAGE SWITCHING SYSTEM (ENGLISH / BANGLA)
      ========================================================================== */
-  const LANG_KEY = 'webworldbd_lang';
-
   function getPreferredLang() {
     const savedLang = localStorage.getItem(LANG_KEY);
     if (savedLang && (savedLang === 'en' || savedLang === 'bn')) {
@@ -139,23 +86,73 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initialize language
+  /* ==========================================================================
+     3. THEME SWITCHING SYSTEM (DARK / LIGHT MODE)
+     ========================================================================== */
+  function getPreferredTheme() {
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    if (savedTheme) {
+      return savedTheme;
+    }
+    return 'light'; // Default initial theme
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+
+    // Update all theme toggle buttons
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+    themeToggleBtns.forEach(btn => {
+      const icon = btn.querySelector('i');
+      const labelSpan = btn.querySelector('.theme-btn-label');
+      if (theme === 'light') {
+        if (icon) icon.className = 'fa-solid fa-sun';
+        if (labelSpan) labelSpan.setAttribute('data-i18n', 'theme_light');
+        btn.setAttribute('aria-label', 'Switch to Dark Mode');
+        btn.setAttribute('title', 'Switch to Dark Mode');
+      } else {
+        if (icon) icon.className = 'fa-solid fa-moon';
+        if (labelSpan) labelSpan.setAttribute('data-i18n', 'theme_dark');
+        btn.setAttribute('aria-label', 'Switch to Light Mode');
+        btn.setAttribute('title', 'Switch to Light Mode');
+      }
+    });
+
+    // Re-apply language translations to update labels
+    const activeLang = getPreferredLang();
+    applyLanguage(activeLang);
+  }
+
+  // Initialize theme & language
+  const currentTheme = getPreferredTheme();
+  applyTheme(currentTheme);
+
   const currentLang = getPreferredLang();
   applyLanguage(currentLang);
+
+  // Global listener for theme toggle buttons
+  document.addEventListener('click', (e) => {
+    const toggleBtn = e.target.closest('.theme-toggle-btn');
+    if (toggleBtn) {
+      const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+    }
+  });
 
   // Global listener for language toggle buttons
   document.addEventListener('click', (e) => {
     const langBtn = e.target.closest('.lang-toggle-btn');
     if (langBtn) {
-      const activeLang = localStorage.getItem(LANG_KEY) || 'en';
+      const activeLang = getPreferredLang();
       const newLang = activeLang === 'en' ? 'bn' : 'en';
       applyLanguage(newLang);
     }
   });
 
-
   /* ==========================================================================
-     3. SETTINGS PANEL INTERACTIVE LOGIC
+     4. SETTINGS PANEL INTERACTIVE LOGIC
      ========================================================================== */
   const settingsToggleBtn = document.getElementById('settingsToggleBtn');
   const settingsCloseBtn = document.getElementById('settingsCloseBtn');
@@ -200,7 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (settingsCloseBtn) {
-    settingsCloseBtn.addEventListener('click', closeSettingsPanel);
+    settingsCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeSettingsPanel();
+    });
   }
 
   if (settingsBackdrop) {
@@ -235,18 +235,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
   /* ==========================================================================
-     4. UTILITIES & FORM LOGIC
+     5. UTILITIES & FORM LOGIC
      ========================================================================== */
-
-  // 3.1 Dynamic Footer Year Update
   const yearSpan = document.getElementById('current-year');
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // 3.2 Pre-fill Service Select from URL Query Parameter on start-project.html
   const urlParams = new URLSearchParams(window.location.search);
   const selectedServiceParam = urlParams.get('service');
   const serviceSelect = document.getElementById('websiteType');
@@ -261,7 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 3.3 Project Request Form Validation & Submission Handler
   const projectForm = document.getElementById('projectRequestForm');
   const successMessage = document.getElementById('formSuccessMessage');
   const resetFormBtn = document.getElementById('btnResetForm');
@@ -269,7 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (projectForm) {
     const requiredInputs = projectForm.querySelectorAll('[required]');
 
-    // Clear validation state on input
     requiredInputs.forEach(input => {
       input.addEventListener('input', () => {
         if (input.value.trim() !== '') {
@@ -292,14 +286,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (isValid) {
-        // Hide form and show success state
         projectForm.style.display = 'none';
         if (successMessage) {
           successMessage.style.display = 'block';
           successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       } else {
-        // Focus first invalid input
         const firstInvalid = projectForm.querySelector('.invalid');
         if (firstInvalid) {
           firstInvalid.focus();
