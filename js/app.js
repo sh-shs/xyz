@@ -1,6 +1,6 @@
 /**
  * WebWorldBD - Web Development & Digital Services
- * Main Application Script (Theme Switcher, Language Switcher, Form Logic)
+ * Main Application Script (Theme Switcher, Language Switcher, Form Logic, Service Detail Modal)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================================== */
   const THEME_KEY = 'webworldbd_theme';
   const LANG_KEY = 'webworldbd_lang';
+  let activeServiceModalKey = null;
 
   /* ==========================================================================
      2. LANGUAGE SWITCHING SYSTEM (ENGLISH / BANGLA)
@@ -84,6 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.remove('active');
       }
     });
+
+    // If service detail modal is currently open, update its language content dynamically
+    if (activeServiceModalKey && typeof renderServiceModalContent === 'function') {
+      renderServiceModalContent(activeServiceModalKey, lang);
+    }
   }
 
   /* ==========================================================================
@@ -236,7 +242,116 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     5. UTILITIES & FORM LOGIC
+     5. SERVICE DETAIL MODAL SYSTEM
+     ========================================================================== */
+  const serviceDetailModal = document.getElementById('serviceDetailModal');
+  const serviceModalBackdrop = document.getElementById('serviceModalBackdrop');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const modalFooterCloseBtn = document.getElementById('modalFooterCloseBtn');
+  const modalStartProjectBtn = document.getElementById('modalStartProjectBtn');
+
+  function renderServiceModalContent(serviceKey, lang) {
+    if (typeof serviceDetailsData === 'undefined' || !serviceDetailsData[serviceKey]) {
+      return;
+    }
+
+    const data = serviceDetailsData[serviceKey];
+    const currentLang = lang || getPreferredLang();
+
+    // Icon
+    const modalIconEl = document.getElementById('modalServiceIcon');
+    if (modalIconEl) {
+      modalIconEl.innerHTML = `<i class="${data.icon}"></i>`;
+    }
+
+    // Title
+    const modalTitleEl = document.getElementById('modalServiceTitle');
+    if (modalTitleEl) {
+      modalTitleEl.textContent = data.title[currentLang] || data.title['en'];
+    }
+
+    // Price Amount
+    const modalPriceEl = document.getElementById('modalPriceAmount');
+    if (modalPriceEl) {
+      modalPriceEl.textContent = data.price[currentLang] || data.price['en'];
+    }
+
+    // Description
+    const modalDescEl = document.getElementById('modalServiceDescription');
+    if (modalDescEl) {
+      modalDescEl.textContent = data.description[currentLang] || data.description['en'];
+    }
+
+    // Features List
+    const modalFeaturesList = document.getElementById('modalServiceFeatures');
+    if (modalFeaturesList) {
+      modalFeaturesList.innerHTML = '';
+      const features = data.features[currentLang] || data.features['en'] || [];
+      features.forEach(featureText => {
+        const li = document.createElement('li');
+        li.innerHTML = `<i class="fa-solid fa-circle-check feature-check-icon"></i> <span>${featureText}</span>`;
+        modalFeaturesList.appendChild(li);
+      });
+    }
+
+    // Start Project Link pre-fill
+    if (modalStartProjectBtn) {
+      modalStartProjectBtn.href = `start-project.html?service=${encodeURIComponent(serviceKey)}`;
+    }
+  }
+
+  function openServiceModal(serviceKey) {
+    if (!serviceDetailModal || !serviceModalBackdrop) return;
+
+    activeServiceModalKey = serviceKey;
+    renderServiceModalContent(serviceKey, getPreferredLang());
+
+    serviceDetailModal.classList.add('active');
+    serviceModalBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+
+  function closeServiceModal() {
+    if (!serviceDetailModal || !serviceModalBackdrop) return;
+
+    serviceDetailModal.classList.remove('active');
+    serviceModalBackdrop.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+    activeServiceModalKey = null;
+  }
+
+  // Event listener for opening service detail modal
+  document.addEventListener('click', (e) => {
+    const viewBtn = e.target.closest('.view-service-btn');
+    if (viewBtn) {
+      e.preventDefault();
+      const serviceKey = viewBtn.getAttribute('data-service-key');
+      if (serviceKey) {
+        openServiceModal(serviceKey);
+      }
+    }
+  });
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeServiceModal);
+  }
+
+  if (modalFooterCloseBtn) {
+    modalFooterCloseBtn.addEventListener('click', closeServiceModal);
+  }
+
+  if (serviceModalBackdrop) {
+    serviceModalBackdrop.addEventListener('click', closeServiceModal);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && serviceDetailModal && serviceDetailModal.classList.contains('active')) {
+      closeServiceModal();
+    }
+  });
+
+  /* ==========================================================================
+     6. UTILITIES & FORM LOGIC
      ========================================================================== */
   const yearSpan = document.getElementById('current-year');
   if (yearSpan) {
