@@ -274,6 +274,45 @@
     padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px) + 1rem);
     max-height: calc(85vh - 70px);
   }
+
+  /* Service Detail Modal Mobile Bottom-Sheet Adjustments */
+  .service-modal {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 88vh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border-bottom: none;
+  }
+
+  .service-modal.active {
+    transform: translateY(0);
+  }
+
+  .service-modal-header {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .service-modal-body {
+    padding: 1.25rem;
+  }
+
+  .service-modal-features-list {
+    grid-template-columns: 1fr;
+  }
+
+  .service-modal-footer {
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+  }
+
+  .service-modal-footer .btn {
+    width: 100%;
+  }
 }
 
 /* Extra Small Mobile Devices (< 480px) */
