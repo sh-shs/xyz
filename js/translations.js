@@ -277,7 +277,7 @@ const translations = {
     "settings_contact_phone": "কল করুন",
     "settings_about_title": "ওয়েবসাইট সম্পর্কে",
     "settings_about_brand": "WebWorldBD © 2026",
-    "settings_about_desc": "পরিচালনায় শাফায়াত হোসেন সারিপ। উচ্চমানের কাস্টম ওয়েব ডেভেলপমেন্ট ও ডিজিটাল সমাধান।",
+    "settings_about_desc": "পরিচালনায় সাফায়েত হোসেন ছারিফ। উচ্চমানের কাস্টম ওয়েব ডেভেলপমেন্ট ও ডিজিটাল সমাধান।",
 
     // Hero Section (Index)
     "hero_tag": "প্রফেশনাল ডেভেলপার প্রোফাইল",
