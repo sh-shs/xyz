@@ -91,7 +91,7 @@ const translations = {
     "exp_data_title": "Data Solutions & Custom Calculators",
     "exp_data_desc": "Expert Excel data management, automated salary sheet calculators, and structured data handling systems.",
 
-    // Featured Projects (Index)
+    // Featured Projects (Index & Live Preview)
     "projects_tag": "Portfolio",
     "projects_title": "Featured Projects",
     "projects_subtitle": "Real live projects developed and deployed by SHAFAET HOSSEN SARIP.",
@@ -99,6 +99,14 @@ const translations = {
     "project2_title": "SHS Bazar",
     "project2_desc": "This is my e-commerce business website where customers from Bangladesh can browse and purchase products at competitive prices with a focus on trust and affordability.",
     "project2_btn": "Visit SHS Bazar",
+    "project_heart_badge": "Love Website",
+    "project_heart_title": "Animated Heart",
+    "project_heart_desc": "An interactive, animated heart-themed website — a custom project designed to surprise your loved one.",
+    "project_heart_btn": "Visit Website",
+    "project_birthday_badge": "Birthday Website",
+    "project_birthday_title": "Happy Birthday Website",
+    "project_birthday_desc": "A custom surprise website created for celebrating a loved one's birthday, featuring animations and festive design.",
+    "project_birthday_btn": "Visit Website",
 
     // CTA Banner (Index)
     "cta_tag": "WebWorldBD Services",
@@ -347,7 +355,7 @@ const translations = {
     "exp_data_title": "ডেটা সলিউশন ও ক্যালকুলেটর",
     "exp_data_desc": "এক্সেল ডেটা ম্যানেজমেন্ট, স্বয়ংক্রিয় সেলারি শিট ক্যালকুলেটর এবং স্ট্রাকচার্ড ডেটা প্রসেসিং।",
 
-    // Featured Projects (Index)
+    // Featured Projects (Index & Live Preview)
     "projects_tag": "পোর্টফোলিও",
     "projects_title": "প্রধান প্রজেক্টসমূহ",
     "projects_subtitle": "SHAFAET HOSSEN SARIP কর্তৃক ডেভেলপকৃত লাইভ প্রজেক্টসমূহ।",
@@ -355,6 +363,14 @@ const translations = {
     "project2_title": "SHS Bazar",
     "project2_desc": "এটি একটি ই-কমার্স বিজনেস ওয়েবসাইট যেখানে বাংলাদেশের ক্রেতারা সাশ্রয়ী মূল্যে নির্ভরযোগ্যভাবে পণ্য কেনাকাটা করতে পারেন।",
     "project2_btn": "SHS Bazar ভিজিট করুন",
+    "project_heart_badge": "লাভ ওয়েবসাইট",
+    "project_heart_title": "অ্যানিমেটেড হার্ট",
+    "project_heart_desc": "একটি ইন্টারেক্টিভ, অ্যানিমেটেড হার্ট থিমের ওয়েবসাইট — ভালোবাসার মানুষকে সারপ্রাইজ দেওয়ার জন্য তৈরি কাস্টম প্রজেক্ট।",
+    "project_heart_btn": "ভিজিট করুন",
+    "project_birthday_badge": "জন্মদিন ওয়েবসাইট",
+    "project_birthday_title": "জন্মদিন ওয়েবসাইট",
+    "project_birthday_desc": "প্রিয়জনের জন্মদিন উদযাপনের জন্য তৈরি একটি কাস্টম সারপ্রাইজ ওয়েবসাইট, অ্যানিমেশন ও উৎসবমুখর ডিজাইনসহ।",
+    "project_birthday_btn": "ভিজিট করুন",
 
     // CTA Banner (Index)
     "cta_tag": "WebWorldBD সার্ভিসেস",
