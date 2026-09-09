@@ -403,7 +403,7 @@ const translations = {
     "s_occasion_tag": "বিশেষ অকেশন",
     "s_occasion_section_title": "অকেশন / ইভেন্ট ওয়েবসাইট",
     "s_occasion_section_subtitle": "ব্যক্তিগত বিশেষ মুহূর্ত, সারপ্রাইজ ও উৎসব উদযাপনের জন্য সাশ্রয়ী মূল্যের কাস্টম ওয়েবসাইট।",
-    "s_birthday_title": "বার্থডে ওয়েবসাইট",
+    "s_birthday_title": "জন্মদিন ওয়েবসাইট",
     "s_birthday_desc": "প্রিয়জনের জন্মদিন উদযাপনের জন্য কাস্টম সারপ্রাইজ ওয়েবসাইট",
     "s_love_title": "লাভ ওয়েবসাইট",
     "s_love_desc": "ভালোবাসার মানুষের জন্য রোমান্টিক থিমের কাস্টম ওয়েবসাইট",
@@ -935,7 +935,7 @@ const serviceDetailsData = {
   "Birthday Website": {
     icon: "fa-solid fa-cake-candles",
     price: { en: "৳1,500+", bn: "৳১,৫০০+" },
-    title: { en: "Birthday Website", bn: "বার্থডে ওয়েবসাইট" },
+    title: { en: "Birthday Website", bn: "জন্মদিন ওয়েবসাইট" },
     description: {
       en: "Creative, surprise celebration websites personalized for birthday wishes with background music, countdown timer, photo memory galleries, dynamic greetings, and interactive animations.",
       bn: "প্রিয়জনের জন্মদিনে তাকে চমকে দিতে মিষ্টি ব্যাকগ্রাউন্ড মিউজিক, স্মৃতিময় ছবি, বার্থডে কাউন্টডাউন ও সারপ্রাইজ উইশ কার্ড সম্বলিত স্পেশাল ওয়েবসাইট।"
