@@ -1051,16 +1051,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   display: block;
 }
 
-.project-preview .project-logo {
-  max-height: 130px;
-  max-width: 100%;
-  object-fit: contain;
-  transition: transform var(--transition-normal);
-}
-
-.project-card:hover .project-preview .project-logo {
-  transform: scale(1.04);
-}
 
 /* Hero Banner Carousel Styles */
 .project-carousel {
@@ -1606,48 +1596,6 @@ select.form-control option {
   color: var(--text-secondary);
 }
 
-.info-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.info-list li {
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.info-list li i {
-  color: var(--accent-primary);
-  width: 18px;
-}
-
-.account-social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.social-link-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.6rem 0.85rem;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-xs);
-  font-weight: 500;
-  transition: all var(--transition-fast);
-}
-
-.social-link-item:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-}
 
 /* Settings Panel (Desktop Dropdown & Base Modal) */
 .settings-backdrop {
