@@ -39,7 +39,7 @@
           <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
           <li><a href="services.html" class="nav-link" data-i18n="nav_services">Services</a></li>
           <li><a href="index.html#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
-          <li><a href="support.html" class="nav-link" data-i18n="nav_support">Support</a></li>
+          <li><a href="support.html" class="nav-link" data-i18n="nav_support">Live Preview</a></li>
           <li><a href="account.html" class="nav-link active" data-i18n="nav_account">Account</a></li>
         </ul>
         <a href="start-project.html" class="btn btn-primary">
@@ -198,69 +198,170 @@
 
           <!-- DETAILS GRID -->
           <div class="account-body-grid">
-            <!-- Left Column: Bio & Skills -->
-            <div class="account-col">
-              <div class="info-block">
-                <h4><i class="fa-solid fa-quote-left gradient-text"></i> <span data-i18n="acc_bio_title">Short Bio</span></h4>
-                <p>
-                  <span data-i18n="acc_bio_text_before">Student of Electronics Department at Kushtia Polytechnic Institute with 1+ years of real-world web application development experience. Specialized in crafting clean HTML, CSS, JavaScript, Python, and Node.js solutions under the brand </span><strong>WebWorldBD</strong>.
-                </p>
-              </div>
+            <!-- Bio Block -->
+            <div class="info-block">
+              <h4><i class="fa-solid fa-quote-left gradient-text"></i> <span data-i18n="acc_bio_title">Short Bio</span></h4>
+              <p>
+                <span data-i18n="acc_bio_text_before">Student of Electronics Department at Kushtia Polytechnic Institute with 1+ years of real-world web application development experience. Specialized in crafting clean HTML, CSS, JavaScript, Python, and Node.js solutions under the brand </span><strong>WebWorldBD</strong>.
+              </p>
+            </div>
 
-              <div class="info-block" style="margin-top: 1.5rem;">
-                <h4><i class="fa-solid fa-code gradient-text"></i> <span data-i18n="acc_skills_title">Core Skills</span></h4>
-                <div class="skills-tags">
-                  <span class="tag">HTML5 & CSS3</span>
-                  <span class="tag">Vanilla JavaScript (ES6+)</span>
-                  <span class="tag">Python</span>
-                  <span class="tag">Node.js</span>
-                  <span class="tag">Firebase</span>
-                  <span class="tag">Database Design</span>
-                  <span class="tag">Excel Salary Sheets</span>
-                </div>
+            <!-- Skills Block -->
+            <div class="info-block">
+              <h4><i class="fa-solid fa-code gradient-text"></i> <span data-i18n="acc_skills_title">Core Skills</span></h4>
+              <div class="skills-tags">
+                <span class="tag">HTML5 & CSS3</span>
+                <span class="tag">Vanilla JavaScript (ES6+)</span>
+                <span class="tag">Python</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Database Design</span>
+                <span class="tag">Excel Salary Sheets</span>
               </div>
             </div>
 
-            <!-- Right Column: Contact & Socials -->
-            <div class="account-col">
-              <div class="info-block">
-                <h4><i class="fa-solid fa-address-card gradient-text"></i> <span data-i18n="acc_contact_title">Contact Info</span></h4>
-                <ul class="info-list">
-                  <li>
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>saripofficialsupport@gmail.com</span>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+8801342697743</span>
-                  </li>
-                  <li>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>+8801342697743</span>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-globe"></i>
-                    <span>sh-shs.github.io/shsarip/</span>
-                  </li>
-                </ul>
-              </div>
+            <!-- Direct Contact Channels -->
+            <div class="info-block full-width-block">
+              <h4><i class="fa-solid fa-address-book gradient-text"></i> <span data-i18n="sup_direct_title">Direct Channels</span></h4>
+              <p class="contact-label" style="margin-bottom: 1.25rem;" data-i18n="sup_direct_sub">Immediate response & direct technical support</p>
 
-              <div class="info-block" style="margin-top: 1.5rem;">
-                <h4><i class="fa-solid fa-share-nodes gradient-text"></i> <span data-i18n="acc_conn_title">Connected Profiles</span></h4>
-                <div class="account-social-links">
-                  <a href="https://www.fiverr.com/s/K38AVRk" target="_blank" rel="noopener noreferrer" class="social-link-item">
-                    <i class="fa-solid fa-briefcase"></i> <span data-i18n="acc_fv_link">Fiverr Profile</span>
-                  </a>
-                  <a href="https://t.me/webworldbd" target="_blank" rel="noopener noreferrer" class="social-link-item">
-                    <i class="fa-brands fa-telegram"></i> <span data-i18n="acc_tg_link">Telegram Page</span>
-                  </a>
-                  <a href="https://www.facebook.com/share/19Bu6bwyWv/" target="_blank" rel="noopener noreferrer" class="social-link-item">
-                    <i class="fa-brands fa-facebook"></i> <span data-i18n="acc_fb_link">Facebook Page</span>
-                  </a>
-                  <a href="https://www.tiktok.com/@shsaripofficial" target="_blank" rel="noopener noreferrer" class="social-link-item">
-                    <i class="fa-brands fa-tiktok"></i> <span data-i18n="acc_tiktok_link">TikTok Account</span>
-                  </a>
-                </div>
+              <div class="support-channels">
+                <!-- Phone -->
+                <a href="tel:+8801342697743" class="contact-item">
+                  <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                  <div class="contact-details">
+                    <div class="contact-label" data-i18n="sup_call_me">Call Me</div>
+                    <div class="contact-value">+8801342697743</div>
+                  </div>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/8801342697743" target="_blank" rel="noopener noreferrer" class="contact-item">
+                  <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                  <div class="contact-details">
+                    <div class="contact-label" data-i18n="sup_wa_contact">Contact on WhatsApp</div>
+                    <div class="contact-value">+8801342697743</div>
+                  </div>
+                </a>
+
+                <!-- Hotline -->
+                <a href="tel:+8809658183506" class="contact-item">
+                  <div class="contact-icon"><i class="fa-solid fa-headset"></i></div>
+                  <div class="contact-details">
+                    <div class="contact-label" data-i18n="sup_hotline">Hotline</div>
+                    <div class="contact-value">+8809658183506</div>
+                  </div>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:saripofficialsupport@gmail.com" class="contact-item">
+                  <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="contact-details">
+                    <div class="contact-label" data-i18n="sup_email_sup">Email Support</div>
+                    <div class="contact-value">saripofficialsupport@gmail.com</div>
+                  </div>
+                </a>
+
+                <!-- Telegram Support -->
+                <a href="https://t.me/saripsupportBD" target="_blank" rel="noopener noreferrer" class="contact-item">
+                  <div class="contact-icon"><i class="fa-brands fa-telegram"></i></div>
+                  <div class="contact-details">
+                    <div class="contact-label" data-i18n="sup_tg_sup">Telegram Support</div>
+                    <div class="contact-value">t.me/saripsupportBD</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Social Media & Fiverr Profiles -->
+            <div class="info-block full-width-block">
+              <h4><i class="fa-solid fa-share-nodes gradient-text"></i> <span data-i18n="sup_social_title">Social & Freelance Gigs</span></h4>
+              <p class="contact-label" style="margin-bottom: 1.25rem;" data-i18n="sup_social_sub">Explore verified freelancing profiles & social channels</p>
+
+              <div class="support-channels">
+                <!-- Fiverr Profile -->
+                <a href="https://www.fiverr.com/s/K38AVRk" target="_blank" rel="noopener noreferrer" class="gig-card">
+                  <div class="gig-info">
+                    <div class="gig-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <div>
+                      <div class="gig-title" data-i18n="sup_fv_profile">View Fiverr Profile</div>
+                      <div class="gig-badge" data-i18n="sup_fv_badge_seller">Verified Fiverr Seller</div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <!-- Fiverr Web Developer Gig -->
+                <a href="https://www.fiverr.com/s/50G4BPv" target="_blank" rel="noopener noreferrer" class="gig-card">
+                  <div class="gig-info">
+                    <div class="gig-icon"><i class="fa-solid fa-code"></i></div>
+                    <div>
+                      <div class="gig-title" data-i18n="sup_fv_web_gig">Fiverr Web Developer Gig</div>
+                      <div class="gig-badge" data-i18n="sup_fv_badge_web">Full Custom Websites</div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <!-- Fiverr App Developer Gig -->
+                <a href="https://www.fiverr.com/s/qb8X0vd" target="_blank" rel="noopener noreferrer" class="gig-card">
+                  <div class="gig-info">
+                    <div class="gig-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <div>
+                      <div class="gig-title" data-i18n="sup_fv_app_gig">Fiverr App Developer Gig</div>
+                      <div class="gig-badge" data-i18n="sup_fv_badge_app">Web & Mobile Apps</div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <!-- Fiverr Excel / Data Entry Gig -->
+                <a href="https://www.fiverr.com/s/Em0ADx7" target="_blank" rel="noopener noreferrer" class="gig-card">
+                  <div class="gig-info">
+                    <div class="gig-icon"><i class="fa-solid fa-table"></i></div>
+                    <div>
+                      <div class="gig-title" data-i18n="sup_fv_excel_gig">Fiverr Excel / Data Entry Gig</div>
+                      <div class="gig-badge" data-i18n="sup_fv_badge_excel">Spreadsheets & Salary Sheets</div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <!-- Telegram Page -->
+                <a href="https://t.me/webworldbd" target="_blank" rel="noopener noreferrer" class="gig-card">
+                  <div class="gig-info">
+                    <div class="gig-icon"><i class="fa-brands fa-telegram"></i></div>
+                    <div>
+                      <div class="gig-title" data-i18n="sup_tg_page">Telegram Page</div>
+                      <div class="gig-badge">t.me/webworldbd</div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <!-- Facebook Page -->
+                <a href="https://www.facebook.com/share/19Bu6bwyWv/" target="_blank" rel="noopener noreferrer" class="gig-card">
+                  <div class="gig-info">
+                    <div class="gig-icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div>
+                      <div class="gig-title" data-i18n="sup_fb_page">Visit Facebook</div>
+                      <div class="gig-badge" data-i18n="sup_fb_badge">Official Facebook Page</div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@shsaripofficial" target="_blank" rel="noopener noreferrer" class="gig-card">
+                  <div class="gig-info">
+                    <div class="gig-icon"><i class="fa-brands fa-tiktok"></i></div>
+                    <div>
+                      <div class="gig-title" data-i18n="sup_tiktok_page">Visit TikTok</div>
+                      <div class="gig-badge">@shsaripofficial</div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -323,10 +424,10 @@
         <span class="bottom-nav-cta-label" data-i18n="nav_start_project_caps">START PROJECT</span>
       </a>
 
-      <!-- 4. Support -->
+      <!-- 4. Live Preview -->
       <a href="support.html" class="bottom-nav-item">
-        <i class="fa-solid fa-headset bottom-nav-icon"></i>
-        <span data-i18n="nav_support">Support</span>
+        <i class="fa-solid fa-desktop bottom-nav-icon"></i>
+        <span data-i18n="nav_support">Live Preview</span>
       </a>
 
       <!-- 5. Account -->
