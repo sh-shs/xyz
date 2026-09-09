@@ -222,6 +222,11 @@
     height: 200px;
   }
 
+  .account-banner {
+    justify-content: center;
+    padding-top: 0.85rem;
+  }
+
   .account-avatar {
     width: 85px;
     height: 85px;
