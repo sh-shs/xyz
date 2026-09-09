@@ -1156,6 +1156,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font-weight: 600;
 }
 
+.project-content .project-badge {
+  position: static;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
 .project-content {
   padding: 1.75rem;
   display: flex;
