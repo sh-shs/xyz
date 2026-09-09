@@ -423,4 +423,69 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  /* ==========================================================================
+     7. HERO BANNER CAROUSEL LOGIC (SHS BAZAR)
+     ========================================================================== */
+  const carousel = document.getElementById('shsBazarCarousel');
+  if (carousel) {
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    let currentIndex = 0;
+    let timer = null;
+
+    function goToSlide(index) {
+      if (slides.length === 0) return;
+      currentIndex = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, i) => {
+        if (i === currentIndex) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        if (i === currentIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      timer = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, 2000);
+    }
+
+    function stopAutoSlide() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    // Dot click listeners
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+        if (!isNaN(slideIndex)) {
+          goToSlide(slideIndex);
+          startAutoSlide(); // reset interval
+        }
+      });
+    });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
+
+    // Initialize auto slide
+    startAutoSlide();
+  }
 });
