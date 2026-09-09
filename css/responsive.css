@@ -217,6 +217,10 @@
     grid-template-columns: 1fr;
   }
 
+  .project-preview {
+    height: 200px;
+  }
+
   .avatar-wrapper {
     width: 200px;
     height: 200px;

@@ -171,8 +171,23 @@
         <div class="projects-grid" style="grid-template-columns: 1fr;">
           <!-- SHS Bazar Live Preview Card -->
           <div class="project-card">
-            <div class="project-preview">
-              <img src="assets/images/shs-bazar-logo.png" alt="SHS Bazar Logo" class="project-logo">
+            <div class="project-preview project-carousel" id="shsBazarCarousel" aria-label="SHS Bazar Hero Banner Carousel">
+              <div class="carousel-slides">
+                <div class="carousel-slide active">
+                  <img src="assets/images/shs-bazar-banner-1.png" alt="SHS Bazar Banner 1" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                  <img src="assets/images/shs-bazar-banner-2.png" alt="SHS Bazar Banner 2" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                  <img src="assets/images/shs-bazar-banner-3.png" alt="SHS Bazar Banner 3" class="carousel-img">
+                </div>
+              </div>
+              <div class="carousel-dots">
+                <button type="button" class="carousel-dot active" data-slide="0" aria-label="Banner 1"></button>
+                <button type="button" class="carousel-dot" data-slide="1" aria-label="Banner 2"></button>
+                <button type="button" class="carousel-dot" data-slide="2" aria-label="Banner 3"></button>
+              </div>
               <span class="project-badge" data-i18n="project2_badge">E-commerce Website</span>
             </div>
             <div class="project-content">
