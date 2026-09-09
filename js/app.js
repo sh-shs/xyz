@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedLang && (savedLang === 'en' || savedLang === 'bn')) {
       return savedLang;
     }
-    return 'en'; // Default
+    return 'bn'; // Default
   }
 
   function applyLanguage(lang) {
