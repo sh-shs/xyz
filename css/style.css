@@ -627,6 +627,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   gap: 2rem;
 }
 
+.full-width-block {
+  grid-column: 1 / -1;
+}
+
 .about-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);

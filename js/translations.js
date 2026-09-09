@@ -9,7 +9,7 @@ const translations = {
     "nav_home": "Home",
     "nav_services": "Services",
     "nav_projects": "Projects",
-    "nav_support": "Support",
+    "nav_support": "Live Preview",
     "nav_account": "Account",
     "nav_start_project": "Start Project",
     "nav_start_project_caps": "START PROJECT",
@@ -205,7 +205,12 @@ const translations = {
     "succ_wa_btn": "Chat Instant on WhatsApp",
     "succ_reset_btn": "Submit Another Request",
 
-    // Support Page
+    // Live Preview Page
+    "lp_tag": "Live Preview",
+    "lp_title": "Live Project Preview",
+    "lp_subtitle": "Explore live running projects and web applications developed by SHAFAET HOSSEN SARIP.",
+
+    // Support / Contact Channels
     "sup_tag": "Support Center",
     "sup_title": "Contact & Support Channels",
     "sup_subtitle": "Have questions or need consultation? Reach out directly through any of the official WebWorldBD communication channels below.",
@@ -243,8 +248,8 @@ const translations = {
     "acc_bio_title": "Short Bio",
     "acc_bio_text_before": "Student of Electronics Department at Kushtia Polytechnic Institute with 1+ years of real-world web application development experience. Specialized in crafting clean HTML, CSS, JavaScript, Python, and Node.js solutions under the brand ",
     "acc_skills_title": "Core Skills",
-    "acc_contact_title": "Contact Info",
-    "acc_conn_title": "Connected Profiles",
+    "acc_contact_title": "Direct Channels",
+    "acc_conn_title": "Social Media & Fiverr Profiles",
     "acc_fv_link": "Fiverr Profile",
     "acc_tg_link": "Telegram Page",
     "acc_fb_link": "Facebook Page",
@@ -260,7 +265,7 @@ const translations = {
     "nav_home": "হোম",
     "nav_services": "সার্ভিস",
     "nav_projects": "প্রজেক্ট",
-    "nav_support": "সাপোর্ট",
+    "nav_support": "লাইভ প্রিভিউ",
     "nav_account": "অ্যাকাউন্ট",
     "nav_start_project": "প্রজেক্ট শুরু করুন",
     "nav_start_project_caps": "প্রজেক্ট শুরু করুন",
@@ -456,7 +461,12 @@ const translations = {
     "succ_wa_btn": "হোয়াটসঅ্যাপে তাৎক্ষণিক চ্যাট করুন",
     "succ_reset_btn": "আরেকটি অনুরোধ পাঠান",
 
-    // Support Page
+    // Live Preview Page
+    "lp_tag": "লাইভ প্রিভিউ",
+    "lp_title": "লাইভ প্রজেক্ট প্রিভিউ",
+    "lp_subtitle": "SHAFAET HOSSEN SARIP কর্তৃক ডেভেলপকৃত লাইভ রানিং প্রজেক্ট ও অ্যাপ্লিকেশনসমূহ দেখুন।",
+
+    // Support / Contact Channels
     "sup_tag": "সাপোর্ট সেন্টার",
     "sup_title": "যোগাযোগ ও সাপোর্ট মাধ্যম",
     "sup_subtitle": "কোনো প্রশ্ন বা পরামর্শের প্রয়োজন? সরাসরি WebWorldBD-এর অফিশিয়াল যোগাযোগ মাধ্যমে যোগাযোগ করুন।",
@@ -494,8 +504,8 @@ const translations = {
     "acc_bio_title": "সংক্ষিপ্ত বায়ো",
     "acc_bio_text_before": "কুষ্টিয়া পলিটেকনিক ইনস্টিটিউটের ইলেকট্রনিক্স বিভাগের শিক্ষার্থী, ১+ বছরের বাস্তব ওয়েব অ্যাপ্লিকেশন ডেভেলপমেন্টের অভিজ্ঞতাসম্পন্ন। ভ্যানিলা এইচটিএমএল, সিএসএস, জাভাস্ক্রিপ্ট, পাইথন ও নোড.জেএস সলিউশনে পারদর্শী। প্রতিষ্ঠাতা - ",
     "acc_skills_title": "প্রধান দক্ষতাসমূহ",
-    "acc_contact_title": "যোগাযোগের তথ্য",
-    "acc_conn_title": "সংযুক্ত প্রোফাইল",
+    "acc_contact_title": "সরাসরি যোগাযোগ মাধ্যম",
+    "acc_conn_title": "সোশ্যাল মিডিয়া ও ফাইবার প্রোফাইল",
     "acc_fv_link": "ফাইবার প্রোফাইল",
     "acc_tg_link": "টেলিগ্রাম পেজ",
     "acc_fb_link": "ফেসবুক পেজ",
