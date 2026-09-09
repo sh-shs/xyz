@@ -104,7 +104,7 @@ const translations = {
     "project_heart_desc": "An interactive, animated heart-themed website — a custom project designed to surprise your loved one.",
     "project_heart_btn": "Visit Website",
     "project_birthday_badge": "Birthday Website",
-    "project_birthday_title": "Happy Birthday Website",
+    "project_birthday_title": "Birthday Website",
     "project_birthday_desc": "A custom surprise website created for celebrating a loved one's birthday, featuring animations and festive design.",
     "project_birthday_btn": "Visit Website",
 
@@ -368,7 +368,7 @@ const translations = {
     "project_heart_desc": "একটি ইন্টারেক্টিভ, অ্যানিমেটেড হার্ট থিমের ওয়েবসাইট — ভালোবাসার মানুষকে সারপ্রাইজ দেওয়ার জন্য তৈরি কাস্টম প্রজেক্ট।",
     "project_heart_btn": "ভিজিট করুন",
     "project_birthday_badge": "জন্মদিন ওয়েবসাইট",
-    "project_birthday_title": "জন্মদিন ওয়েবসাইট",
+    "project_birthday_title": "Birthday Website",
     "project_birthday_desc": "প্রিয়জনের জন্মদিন উদযাপনের জন্য তৈরি একটি কাস্টম সারপ্রাইজ ওয়েবসাইট, অ্যানিমেশন ও উৎসবমুখর ডিজাইনসহ।",
     "project_birthday_btn": "ভিজিট করুন",
 
