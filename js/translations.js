@@ -364,7 +364,7 @@ const translations = {
     "project2_desc": "এটি একটি ই-কমার্স বিজনেস ওয়েবসাইট যেখানে বাংলাদেশের ক্রেতারা সাশ্রয়ী মূল্যে নির্ভরযোগ্যভাবে পণ্য কেনাকাটা করতে পারেন।",
     "project2_btn": "SHS Bazar ভিজিট করুন",
     "project_heart_badge": "লাভ ওয়েবসাইট",
-    "project_heart_title": "অ্যানিমেটেড হার্ট",
+    "project_heart_title": "Animated Heart",
     "project_heart_desc": "একটি ইন্টারেক্টিভ, অ্যানিমেটেড হার্ট থিমের ওয়েবসাইট — ভালোবাসার মানুষকে সারপ্রাইজ দেওয়ার জন্য তৈরি কাস্টম প্রজেক্ট।",
     "project_heart_btn": "ভিজিট করুন",
     "project_birthday_badge": "জন্মদিন ওয়েবসাইট",
