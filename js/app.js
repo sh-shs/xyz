@@ -401,6 +401,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (isValid) {
+        const fullName = document.getElementById('fullName')?.value.trim() || '';
+        const location = document.getElementById('location')?.value.trim() || '';
+        const phone = document.getElementById('phone')?.value.trim() || '';
+        const email = document.getElementById('email')?.value.trim() || '';
+        const websiteType = document.getElementById('websiteType')?.value.trim() || '';
+        const projectDesc = document.getElementById('projectDesc')?.value.trim() || '';
+        const estimatedBudget = document.getElementById('estimatedBudget')?.value.trim() || '';
+        const deadline = document.getElementById('deadline')?.value.trim() || '';
+        const additionalInfo = document.getElementById('additionalInfo')?.value.trim() || '';
+
+        const messageText = `নতুন প্রজেক্ট রিকোয়েস্ট\n` +
+          `নাম: ${fullName}\n` +
+          `ঠিকানা: ${location}\n` +
+          `ফোন: ${phone}\n` +
+          `ইমেইল: ${email}\n` +
+          `ওয়েবসাইটের ধরন: ${websiteType}\n` +
+          `বিবরণ: ${projectDesc}\n` +
+          `বাজেট: ${estimatedBudget}\n` +
+          `সময়সীমা: ${deadline}\n` +
+          `অতিরিক্ত তথ্য: ${additionalInfo}`;
+
+        const waUrl = `https://wa.me/8801342697743?text=${encodeURIComponent(messageText)}`;
+
+        window.open(waUrl, '_blank');
+
+        const successWaLink = document.getElementById('successWaLink');
+        if (successWaLink) {
+          successWaLink.href = waUrl;
+        }
+
         projectForm.style.display = 'none';
         if (successMessage) {
           successMessage.style.display = 'block';

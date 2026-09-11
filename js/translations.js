@@ -205,6 +205,7 @@ const translations = {
     "f_info_label": "10. Additional Information",
     "f_info_ph": "Any reference website links or special requests?",
     "f_submit_btn": "Submit Project Request",
+    "form_wa_note": "Click the Send button on WhatsApp to send your message",
 
     // Form Success Screen
     "succ_title": "Project Request Received!",
@@ -469,6 +470,7 @@ const translations = {
     "f_info_label": "১০. অতিরিক্ত তথ্য",
     "f_info_ph": "কোনো রেফারেন্স ওয়েবসাইট লিংক বা বিশেষ অনুরোধ থাকলে লিখুন...",
     "f_submit_btn": "প্রজেক্টের অনুরোধ পাঠান",
+    "form_wa_note": "WhatsApp-এ মেসেজটি পাঠাতে Send বাটনে ক্লিক করুন",
 
     // Form Success Screen
     "succ_title": "প্রজেক্টের অনুরোধ জমা হয়েছে!",
