@@ -259,6 +259,10 @@
               <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
                 <i class="fa-solid fa-paper-plane"></i> <span data-i18n="f_submit_btn">Submit Project Request</span>
               </button>
+              <p class="form-wa-note" style="margin-top: 0.75rem; text-align: center; font-size: 0.9rem; color: var(--text-muted, #666);">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 0.25rem;"></i>
+                <span data-i18n="form_wa_note">WhatsApp-এ মেসেজটি পাঠাতে Send বাটনে ক্লিক করুন</span>
+              </p>
             </div>
           </form>
 
@@ -267,9 +271,13 @@
             <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
             <h2 data-i18n="succ_title">Project Request Received!</h2>
             <p><span data-i18n="succ_p1_before">Thank you for submitting your project request to WebWorldBD. </span><strong>SHAFAET HOSSEN SARIP</strong><span data-i18n="succ_p1_after"> will review your requirements and reach out to you directly via Phone / WhatsApp or Email shortly.</span></p>
+            <p class="form-wa-note" style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-muted, #666);">
+              <i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 0.25rem;"></i>
+              <span data-i18n="form_wa_note">WhatsApp-এ মেসেজটি পাঠাতে Send বাটনে ক্লিক করুন</span>
+            </p>
 
             <div class="success-actions" style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-              <a href="https://wa.me/8801342697743" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <a href="https://wa.me/8801342697743" target="_blank" rel="noopener noreferrer" id="successWaLink" class="btn btn-primary">
                 <i class="fa-brands fa-whatsapp"></i> <span data-i18n="succ_wa_btn">Chat Instant on WhatsApp</span>
               </a>
               <button type="button" id="btnResetForm" class="btn btn-secondary">
