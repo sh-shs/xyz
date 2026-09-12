@@ -165,6 +165,27 @@
     display: block;
   }
 
+  /* Elevate floating buttons on mobile to avoid overlapping the bottom navigation bar */
+  .floating-actions {
+    bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px) + 16px);
+    right: 16px;
+    gap: 10px;
+  }
+
+  .floating-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .floating-btn-whatsapp {
+    font-size: 1.55rem;
+  }
+
+  .floating-btn-fiverr svg {
+    width: 20px;
+    height: 20px;
+  }
+
   /* Prevent body bottom padding double spacing */
   body {
     padding-bottom: 0;
