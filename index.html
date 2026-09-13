@@ -294,6 +294,79 @@
       </div>
     </section>
 
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="section certifications-section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-award"></i> <span data-i18n="cert_tag">🏆 Certifications</span></div>
+          <h2 class="section-title" data-i18n="cert_title">Achieved Certifications</h2>
+          <p class="section-subtitle" data-i18n="cert_subtitle">Professional certifications earned from recognized institutions.</p>
+        </div>
+
+        <div class="certifications-grid">
+          <!-- Card 1 -->
+          <div class="cert-card" data-cert-img="assets/images/certificates/social-media-certified.png" data-cert-title="Social Media Certified — HubSpot Academy">
+            <div class="cert-thumb-wrapper">
+              <img src="assets/images/certificates/social-media-certified.png" alt="Social Media Certified — HubSpot Academy" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-i18n="cert_click_zoom">Click to enlarge</span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <h4 class="cert-card-title" data-i18n="cert_1_title">Social Media Certified</h4>
+              <p class="cert-card-issuer" data-i18n="cert_1_issuer">HubSpot Academy</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="cert-card" data-cert-img="assets/images/certificates/digital-marketing-certified.png" data-cert-title="Digital Marketing Certified — HubSpot Academy">
+            <div class="cert-thumb-wrapper">
+              <img src="assets/images/certificates/digital-marketing-certified.png" alt="Digital Marketing Certified — HubSpot Academy" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-i18n="cert_click_zoom">Click to enlarge</span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <h4 class="cert-card-title" data-i18n="cert_2_title">Digital Marketing Certified</h4>
+              <p class="cert-card-issuer" data-i18n="cert_2_issuer">HubSpot Academy</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="cert-card" data-cert-img="assets/images/certificates/semrush-seo-certificate.png" data-cert-title="International SEO — Semrush Academy">
+            <div class="cert-thumb-wrapper">
+              <img src="assets/images/certificates/semrush-seo-certificate.png" alt="International SEO — Semrush Academy" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-i18n="cert_click_zoom">Click to enlarge</span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <h4 class="cert-card-title" data-i18n="cert_3_title">International SEO</h4>
+              <p class="cert-card-issuer" data-i18n="cert_3_issuer">Semrush Academy</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="cert-card" data-cert-img="assets/images/certificates/google-ads-search-certificate.png" data-cert-title="Google Ads Search Certification — Google">
+            <div class="cert-thumb-wrapper">
+              <img src="assets/images/certificates/google-ads-search-certificate.png" alt="Google Ads Search Certification — Google" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-i18n="cert_click_zoom">Click to enlarge</span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <h4 class="cert-card-title" data-i18n="cert_4_title">Google Ads Search Certification</h4>
+              <p class="cert-card-issuer" data-i18n="cert_4_issuer">Google</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- EXPERIENCE & WHAT I DO SECTION -->
     <section class="section" id="experience">
       <div class="container">
@@ -383,6 +456,18 @@
       <p>© <span id="current-year"></span> <span data-i18n="footer_rights">WebWorldBD. Managed by</span> <strong>SHAFAET HOSSEN SARIP</strong>. <span data-i18n="footer_all_rights">All rights reserved.</span></p>
     </div>
   </footer>
+
+  <!-- CERTIFICATE LIGHTBOX MODAL -->
+  <div class="cert-lightbox-backdrop" id="certLightboxBackdrop"></div>
+  <div class="cert-lightbox-modal" id="certLightboxModal" role="dialog" aria-modal="true" aria-label="Certificate Image Preview">
+    <button type="button" class="cert-lightbox-close" id="certLightboxClose" aria-label="Close modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="cert-lightbox-body">
+      <img src="" alt="Certificate Large View" id="certLightboxImage" class="cert-lightbox-img">
+      <div class="cert-lightbox-caption" id="certLightboxCaption"></div>
+    </div>
+  </div>
 
   <!-- FLOATING ACTION BUTTONS (WhatsApp & Fiverr) -->
   <div class="floating-actions" aria-label="Floating Actions">

@@ -78,6 +78,20 @@ const translations = {
     "skill_db_title": "Databases & Data Management",
     "skill_db_desc": "Database modeling, structured data storage, automated Excel salary sheets, and reporting tools.",
 
+    // Certifications Section (Index)
+    "cert_tag": "🏆 Certifications",
+    "cert_title": "Achieved Certifications",
+    "cert_subtitle": "Professional certifications earned from recognized institutions.",
+    "cert_1_title": "Social Media Certified",
+    "cert_1_issuer": "HubSpot Academy",
+    "cert_2_title": "Digital Marketing Certified",
+    "cert_2_issuer": "HubSpot Academy",
+    "cert_3_title": "International SEO",
+    "cert_3_issuer": "Semrush Academy",
+    "cert_4_title": "Google Ads Search Certification",
+    "cert_4_issuer": "Google",
+    "cert_click_zoom": "Click to enlarge",
+
     // Experience / What I Do (Index)
     "exp_tag": "Experience & Capabilities",
     "exp_title": "What I Do",
@@ -342,6 +356,20 @@ const translations = {
     "skill_firebase_desc": "ডাটাবেস ম্যানেজমেন্ট, অথেন্টিকেশন সিস্টেম, ক্লাউড স্টোরেজ এবং হোস্টিং ডিপ্লয়মেন্ট।",
     "skill_db_title": "ডাটাবেস ও ডেটা সলিউশন",
     "skill_db_desc": "ডাটাবেস মডেলিং, স্ট্রাকচার্ড ডেটা স্টোরেজ, এক্সেল সেলারি শিট এবং রিপোর্টিং টুলস।",
+
+    // Certifications Section (Index)
+    "cert_tag": "🏆 সার্টিফিকেশন",
+    "cert_title": "অর্জিত সার্টিফিকেট",
+    "cert_subtitle": "স্বীকৃত প্রতিষ্ঠান থেকে অর্জিত পেশাদার সার্টিফিকেশনসমূহ।",
+    "cert_1_title": "Social Media Certified",
+    "cert_1_issuer": "HubSpot Academy",
+    "cert_2_title": "Digital Marketing Certified",
+    "cert_2_issuer": "HubSpot Academy",
+    "cert_3_title": "International SEO",
+    "cert_3_issuer": "Semrush Academy",
+    "cert_4_title": "Google Ads Search Certification",
+    "cert_4_issuer": "Google",
+    "cert_click_zoom": "বড় করে দেখতে ক্লিক করুন",
 
     // Experience / What I Do (Index)
     "exp_tag": "অভিজ্ঞতা ও সেবা",

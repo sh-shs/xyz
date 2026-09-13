@@ -518,4 +518,60 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize auto slide
     startAutoSlide();
   }
+
+  /* ==========================================================================
+     8. CERTIFICATE LIGHTBOX MODAL LOGIC
+     ========================================================================== */
+  const certLightboxModal = document.getElementById('certLightboxModal');
+  const certLightboxBackdrop = document.getElementById('certLightboxBackdrop');
+  const certLightboxClose = document.getElementById('certLightboxClose');
+  const certLightboxImage = document.getElementById('certLightboxImage');
+  const certLightboxCaption = document.getElementById('certLightboxCaption');
+
+  function openCertLightbox(imgSrc, captionText) {
+    if (!certLightboxModal || !certLightboxBackdrop || !certLightboxImage) return;
+
+    certLightboxImage.src = imgSrc;
+    certLightboxImage.alt = captionText || 'Certificate';
+    if (certLightboxCaption) {
+      certLightboxCaption.textContent = captionText || '';
+    }
+
+    certLightboxModal.classList.add('active');
+    certLightboxBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCertLightbox() {
+    if (!certLightboxModal || !certLightboxBackdrop) return;
+
+    certLightboxModal.classList.remove('active');
+    certLightboxBackdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', (e) => {
+    const certCard = e.target.closest('.cert-card');
+    if (certCard) {
+      const imgSrc = certCard.getAttribute('data-cert-img');
+      const caption = certCard.getAttribute('data-cert-title');
+      if (imgSrc) {
+        openCertLightbox(imgSrc, caption);
+      }
+    }
+  });
+
+  if (certLightboxClose) {
+    certLightboxClose.addEventListener('click', closeCertLightbox);
+  }
+
+  if (certLightboxBackdrop) {
+    certLightboxBackdrop.addEventListener('click', closeCertLightbox);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && certLightboxModal && certLightboxModal.classList.contains('active')) {
+      closeCertLightbox();
+    }
+  });
 });
