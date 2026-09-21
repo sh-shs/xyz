@@ -463,21 +463,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .hero {
   padding-top: calc(var(--header-height) + 3.5rem);
   padding-bottom: 4rem;
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.12) 0%, rgba(9, 13, 22, 0) 70%);
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 3rem;
+.hero-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .hero-content {
-  max-width: 650px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -493,11 +494,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color: var(--text-secondary);
   margin-bottom: 2rem;
   line-height: 1.6;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-ctas {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
   margin-bottom: 2.5rem;
@@ -509,6 +514,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   gap: 1.5rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border-color);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .stat-item h4 {
@@ -523,52 +530,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   letter-spacing: 0.5px;
 }
 
-.hero-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: 2.25rem;
-  backdrop-filter: blur(12px);
-  position: relative;
-  box-shadow: var(--shadow-lg);
-}
-
-.hero-card::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 20%;
-  right: 20%;
-  height: 1px;
-  background: var(--accent-gradient);
-}
-
-.profile-preview {
-  text-align: center;
-}
-
-.avatar-wrapper {
-  width: 300px;
-  height: 300px;
-  max-width: 100%;
-  border-radius: var(--radius-xl);
-  background: var(--accent-gradient);
-  padding: 4px;
-  margin: 0 auto 1.5rem auto;
-  box-shadow: var(--shadow-md);
-}
-
-.avatar-inner {
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  background: var(--bg-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
 .profile-img {
   width: 100%;
   height: 100%;
@@ -576,48 +537,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   object-position: center top;
   border-radius: inherit;
   display: block;
-}
-
-.profile-name {
-  font-size: var(--font-size-xl);
-  margin-bottom: 0.25rem;
-}
-
-.profile-role {
-  color: var(--accent-secondary);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-}
-
-.profile-location {
-  font-size: var(--font-size-xs);
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-}
-
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  color: #22c55e;
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 8px #22c55e;
 }
 
 /* About Section */

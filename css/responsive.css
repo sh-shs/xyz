@@ -120,12 +120,6 @@
 
 /* Laptops & Tablets (< 1024px) */
 @media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
-  }
-
   .hero-content {
     max-width: 100%;
     margin: 0 auto;
@@ -145,11 +139,6 @@
   .account-body-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .avatar-wrapper {
-    width: 250px;
-    height: 250px;
   }
 }
 
@@ -244,11 +233,6 @@
   }
 
   .project-preview {
-    height: 200px;
-  }
-
-  .avatar-wrapper {
-    width: 200px;
     height: 200px;
   }
 
