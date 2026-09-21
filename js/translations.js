@@ -47,9 +47,7 @@ const translations = {
     "hero_stat_sat_val": "100%",
     "hero_stat_tech": "Tech Stack",
     "hero_stat_tech_val": "Modern",
-    "profile_role": "Website & App Developer",
     "profile_loc": "Kushtia, Khulna, Bangladesh",
-    "profile_status": "Available for Freelance & Custom Projects",
 
     // About Section (Index)
     "about_tag": "Personal Profile",
@@ -326,9 +324,7 @@ const translations = {
     "hero_stat_sat_val": "১০০%",
     "hero_stat_tech": "টেক স্ট্যাক",
     "hero_stat_tech_val": "আধুনিক",
-    "profile_role": "ওয়েবসাইট ও অ্যাপ ডেভেলপার",
     "profile_loc": "কুষ্টিয়া, খুলনা, বাংলাদেশ",
-    "profile_status": "ফ্রিল্যান্স ও কাস্টম প্রজেক্টের জন্য প্রস্তুত",
 
     // About Section (Index)
     "about_tag": "ব্যক্তিগত প্রোফাইল",
