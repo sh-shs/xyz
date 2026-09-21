@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Forum & Community Website Development by WebWorldBD. Discussion boards, Q&A portals, and interest communities structured around topics and member threads.">
+  <title>Forum / Community Website Details | WebWorldBD</title>
+
+  <!-- Early Theme Init Script -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem("webworldbd_theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    })();
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- DESKTOP HEADER -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="../index.html" class="logo" aria-label="WebWorldBD Home">
+        <span class="logo-badge">W</span>
+        <span>WebWorldBD</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Desktop Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="../services.html" class="nav-link active" data-i18n="nav_services">Services</a></li>
+          <li><a href="../support.html#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="../support.html" class="nav-link" data-i18n="nav_support">Live Preview</a></li>
+          <li><a href="../account.html" class="nav-link" data-i18n="nav_account">Account</a></li>
+        </ul>
+        <a href="../start-project.html" class="btn btn-primary">
+          <i class="fa-solid fa-rocket"></i> <span data-i18n="nav_start_project">Start Project</span>
+        </a>
+      </nav>
+
+      <!-- Theme, Language & Settings Controls -->
+      <div class="header-controls">
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Switch Theme" title="Switch Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button type="button" class="lang-toggle-btn" id="langToggleBtn" aria-label="Switch Language" title="Switch Language">
+          <span class="lang-en active">EN</span> | <span class="lang-bn">বাংলা</span>
+        </button>
+        <button type="button" class="settings-toggle-btn" id="settingsToggleBtn" aria-label="Settings" title="Settings" aria-expanded="false" aria-controls="settingsPanel">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SETTINGS PANEL & BACKDROP -->
+  <div class="settings-backdrop" id="settingsBackdrop"></div>
+  <div class="settings-panel" id="settingsPanel" role="dialog" aria-modal="true" aria-labelledby="settingsPanelTitle">
+    <div class="settings-header">
+      <h3 class="settings-title" id="settingsPanelTitle">
+        <i class="fa-solid fa-gear gradient-text"></i>
+        <span data-i18n="settings_title">Settings</span>
+      </h3>
+      <button type="button" class="settings-close-btn" id="settingsCloseBtn" aria-label="Close Settings">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="settings-body">
+      <!-- 1. Theme Section -->
+      <div class="settings-section">
+        <div class="settings-section-header">
+          <div>
+            <h4 data-i18n="settings_theme_title">Theme</h4>
+            <p data-i18n="settings_theme_desc">Switch between light and dark mode</p>
+          </div>
+        </div>
+        <div class="settings-options">
+          <button type="button" class="theme-toggle-btn btn btn-secondary btn-sm settings-opt-btn" id="settingsThemeToggle">
+            <span class="theme-btn-label" data-i18n="theme_dark">Dark Mode</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. Language Section -->
+      <div class="settings-section">
+        <div class="settings-section-header">
+          <i class="fa-solid fa-language settings-icon"></i>
+          <div>
+            <h4 data-i18n="settings_lang_title">Language</h4>
+            <p data-i18n="settings_lang_desc">Select preferred display language</p>
+          </div>
+        </div>
+        <div class="settings-lang-switchers">
+          <button type="button" class="settings-lang-btn active" data-lang="en">
+            <span data-i18n="settings_lang_en">English (EN)</span>
+          </button>
+          <button type="button" class="settings-lang-btn" data-lang="bn">
+            <span data-i18n="settings_lang_bn">বাংলা (BN)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Quick Contact Shortcuts -->
+      <div class="settings-section">
+        <div class="settings-section-header">
+          <i class="fa-solid fa-headset settings-icon"></i>
+          <div>
+            <h4 data-i18n="settings_contact_title">Quick Contact</h4>
+            <p data-i18n="settings_contact_desc">Get instant support via WhatsApp, Email, or Call</p>
+          </div>
+        </div>
+        <div class="settings-contact-links">
+          <a href="https://wa.me/8801342697743" target="_blank" rel="noopener noreferrer" class="settings-contact-item">
+            <i class="fa-brands fa-whatsapp wa-icon"></i>
+            <span data-i18n="settings_contact_wa">WhatsApp Chat</span>
+            <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+          </a>
+          <a href="mailto:saripofficialsupport@gmail.com" class="settings-contact-item">
+            <i class="fa-solid fa-envelope email-icon"></i>
+            <span data-i18n="settings_contact_email">Email Support</span>
+            <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+          </a>
+          <a href="tel:+8801342697743" class="settings-contact-item">
+            <i class="fa-solid fa-phone phone-icon"></i>
+            <span data-i18n="settings_contact_phone">Call Hotline</span>
+            <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. About & Version Info -->
+      <div class="settings-section settings-about-section">
+        <div class="settings-section-header">
+          <i class="fa-solid fa-circle-info settings-icon"></i>
+          <div>
+            <h4 data-i18n="settings_about_title">About Website</h4>
+            <strong class="settings-brand-name" data-i18n="settings_about_brand">WebWorldBD © 2026</strong>
+          </div>
+        </div>
+        <p class="settings-about-text" data-i18n="settings_about_desc">Managed by SHAFAET HOSSEN SARIP. High-performance custom web development and digital solutions.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main style="padding-top: calc(var(--header-height) + 1.5rem); padding-bottom: 4rem;">
+    <div class="container">
+
+      <!-- TOP ACTIONS BAR -->
+      <div class="pd-nav-bar">
+        <a href="../services.html" class="btn-back" data-i18n="pd_btn_back">← Go Back</a>
+        <nav class="pd-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html" data-i18n="pd_bc_home">Home</a>
+          <span class="separator">/</span>
+          <a href="../services.html" data-i18n="pd_bc_services">Services</a>
+          <span class="separator">/</span>
+          <span class="current" data-i18n="s_forum_title">Forum / Community Website</span>
+        </nav>
+      </div>
+
+      <!-- HERO CARD -->
+      <div class="pd-hero-card">
+        <div class="pd-hero-header">
+          <div class="pd-hero-icon"><i class="fa-solid fa-comments"></i></div>
+          <div class="pd-hero-info">
+            <h1 class="pd-hero-title" data-i18n="s_forum_title">Forum / Community Website</h1>
+            <p class="pd-hero-subtitle" data-i18n="s_forum_desc"></p>
+            <div class="pd-price-badge">
+              <span data-i18n="pd_starting_price">Starting From:</span>
+              <span data-i18n="pd_forum_price">৳12,000+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OVERVIEW SECTION -->
+      <div class="pd-section">
+        <h2 class="pd-section-title"><i class="fa-solid fa-circle-info"></i> <span data-i18n="pd_sec_overview">Service Overview</span></h2>
+        <div class="pd-card">
+          <p class="pd-overview-text" data-i18n="pd_forum_overview">Structured discussion boards, community Q&A portals, and topic-based interest platforms with thread creation, user badges, moderation tools, and voting.</p>
+        </div>
+      </div>
+
+      <!-- WHAT YOU GET SECTION -->
+      <div class="pd-section">
+        <h2 class="pd-section-title"><i class="fa-solid fa-list-check"></i> <span data-i18n="pd_sec_what_you_get">What You Get</span></h2>
+        <div class="pd-checklist-grid">
+          <div class="pd-checklist-item"><i class="fa-solid fa-check pd-check-icon"></i> <span data-i18n="pd_forum_chk_1">Topic Category Boards & Threaded Discussion Views</span></div>
+          <div class="pd-checklist-item"><i class="fa-solid fa-check pd-check-icon"></i> <span data-i18n="pd_forum_chk_2">Q&A Layout with Best Answer Selection</span></div>
+          <div class="pd-checklist-item"><i class="fa-solid fa-check pd-check-icon"></i> <span data-i18n="pd_forum_chk_3">User Trust Badges & Reputation Points System</span></div>
+          <div class="pd-checklist-item"><i class="fa-solid fa-check pd-check-icon"></i> <span data-i18n="pd_forum_chk_4">Admin & Moderator Anti-Spam Control Tools</span></div>
+          <div class="pd-checklist-item"><i class="fa-solid fa-check pd-check-icon"></i> <span data-i18n="pd_forum_chk_5">Rich Text Editor for Post Formatting & Images</span></div>
+          <div class="pd-checklist-item"><i class="fa-solid fa-check pd-check-icon"></i> <span data-i18n="pd_forum_chk_6">Member Directory & Saved Favorite Topics</span></div>
+        </div>
+      </div>
+
+      <!-- KEY FEATURES SECTION -->
+      <div class="pd-section">
+        <h2 class="pd-section-title"><i class="fa-solid fa-star"></i> <span data-i18n="pd_sec_key_features">Key Features</span></h2>
+        <div class="pd-features-grid">
+          <div class="pd-feature-card">
+            <div class="pd-feature-card-icon"><i class="fa-solid fa-list-ol"></i></div>
+            <h3 class="pd-feature-card-title" data-i18n="pd_forum_ft_1_title">Threaded Discussions</h3>
+            <p class="pd-feature-card-desc" data-i18n="pd_forum_ft_1_desc">Organized topic threads with nested replies and quotes.</p>
+          </div>
+          <div class="pd-feature-card">
+            <div class="pd-feature-card-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3 class="pd-feature-card-title" data-i18n="pd_forum_ft_2_title">Best Answer Highlight</h3>
+            <p class="pd-feature-card-desc" data-i18n="pd_forum_ft_2_desc">Mark solved Q&A responses so other members find answers fast.</p>
+          </div>
+          <div class="pd-feature-card">
+            <div class="pd-feature-card-icon"><i class="fa-solid fa-shield-cat"></i></div>
+            <h3 class="pd-feature-card-title" data-i18n="pd_forum_ft_3_title">Spam & Moderation Control</h3>
+            <p class="pd-feature-card-desc" data-i18n="pd_forum_ft_3_desc">Tools for moderators to flag, edit, or pin key discussions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHO IS IT FOR? -->
+      <div class="pd-section">
+        <h2 class="pd-section-title"><i class="fa-solid fa-users-gear"></i> <span data-i18n="pd_sec_who_is_it_for">Who Is It For?</span></h2>
+        <div class="pd-audience-list">
+          <div class="pd-audience-item"><i class="fa-solid fa-circle-right pd-audience-icon"></i> <span data-i18n="pd_forum_aud_1">Tech & Coding Communities</span></div>
+          <div class="pd-audience-item"><i class="fa-solid fa-circle-right pd-audience-icon"></i> <span data-i18n="pd_forum_aud_2">Gaming & Hobby Clubs</span></div>
+          <div class="pd-audience-item"><i class="fa-solid fa-circle-right pd-audience-icon"></i> <span data-i18n="pd_forum_aud_3">Customer Support Discussion Boards</span></div>
+        </div>
+      </div>
+
+      <!-- TECHNOLOGIES -->
+      <div class="pd-section">
+        <h2 class="pd-section-title"><i class="fa-solid fa-code"></i> <span data-i18n="pd_sec_technologies">Technologies</span></h2>
+        <div class="pd-tech-grid">
+          <span class="pd-tech-badge"><i class="fa-brands fa-html5"></i> HTML5</span>
+          <span class="pd-tech-badge"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+          <span class="pd-tech-badge"><i class="fa-brands fa-js"></i> JavaScript ES6+</span>
+        </div>
+      </div>
+
+      <!-- DELIVERY INFORMATION -->
+      <div class="pd-section">
+        <h2 class="pd-section-title"><i class="fa-solid fa-truck-fast"></i> <span data-i18n="pd_sec_delivery">Delivery Information</span></h2>
+        <div class="pd-delivery-grid">
+          <div class="pd-delivery-card">
+            <div class="pd-delivery-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="pd-delivery-info">
+              <h5 data-i18n="pd_del_time_title">Estimated Delivery</h5>
+              <p data-i18n="pd_del_time_desc">Typically completed within 3–7 days depending on scope.</p>
+            </div>
+          </div>
+          <div class="pd-delivery-card">
+            <div class="pd-delivery-icon"><i class="fa-solid fa-rotate-left"></i></div>
+            <div class="pd-delivery-info">
+              <h5 data-i18n="pd_del_revision_title">Revision Support</h5>
+              <p data-i18n="pd_del_revision_desc">Multiple iterations until you are 100% satisfied.</p>
+            </div>
+          </div>
+          <div class="pd-delivery-card">
+            <div class="pd-delivery-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div class="pd-delivery-info">
+              <h5 data-i18n="pd_del_responsive_title">Mobile First Design</h5>
+              <p data-i18n="pd_del_responsive_desc">Perfect layout on 320px to 4K displays.</p>
+            </div>
+          </div>
+          <div class="pd-delivery-card">
+            <div class="pd-delivery-icon"><i class="fa-solid fa-headset"></i></div>
+            <div class="pd-delivery-info">
+              <h5 data-i18n="pd_del_support_title">Free Post-Launch Support</h5>
+              <p data-i18n="pd_del_support_desc">Ongoing maintenance and bug fixes included.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ SECTION -->
+      <div class="pd-section">
+        <h2 class="pd-section-title"><i class="fa-solid fa-circle-question"></i> <span data-i18n="pd_sec_faq">Frequently Asked Questions (FAQ)</span></h2>
+        <div class="pd-faq-grid">
+          <div class="pd-faq-card">
+            <div class="pd-faq-question"><i class="fa-solid fa-q"></i> <span data-i18n="pd_forum_faq_1_q">Can users upvote or mark correct answers?</span></div>
+            <div class="pd-faq-answer" data-i18n="pd_forum_faq_1_a">Yes, upvoting and best-answer selection are fully built-in.</div>
+          </div>
+          <div class="pd-faq-card">
+            <div class="pd-faq-question"><i class="fa-solid fa-q"></i> <span data-i18n="pd_forum_faq_2_q">Is it easy to moderate spam posts?</span></div>
+            <div class="pd-faq-answer" data-i18n="pd_forum_faq_2_a">Yes, admin and moderator controls allow easy moderation.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA CARD -->
+      <div class="pd-cta-card">
+        <h2 class="pd-cta-title" data-i18n="pd_cta_title">Ready to start your project?</h2>
+        <p class="pd-cta-desc" data-i18n="pd_cta_subtitle">Get a high-quality, modern, and mobile-optimized website for your business today.</p>
+        <a href="../start-project.html?service=Forum%20%2F%20Community%20Website" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-rocket"></i> <span data-i18n="pd_cta_btn">Start Project →</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <a href="../index.html" class="logo">
+        <span class="logo-badge">W</span>
+        <span>WebWorldBD</span>
+      </a>
+
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/19Bu6bwyWv/" target="_blank" rel="noopener noreferrer" class="social-icon-btn facebook" aria-label="Facebook Page">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.tiktok.com/@shsaripofficial" target="_blank" rel="noopener noreferrer" class="social-icon-btn tiktok" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://t.me/webworldbd" target="_blank" rel="noopener noreferrer" class="social-icon-btn telegram" aria-label="Telegram">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="mailto:saripofficialsupport@gmail.com" class="social-icon-btn email" aria-label="Gmail Support">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://www.fiverr.com/s/K38AVRk" target="_blank" rel="noopener noreferrer" class="social-icon-btn fiverr" aria-label="Fiverr Profile">
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fiverr-svg" width="18" height="18" fill="currentColor"><title>Fiverr</title><path d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-.85c-.546 0-.84.41-.84 1.092v2.466h-1.61v-3.558h-.684c-.547 0-.84.41-.84 1.092v2.466h-1.61v-4.874h1.61v.74c.264-.574.626-.74 1.163-.74h1.972v.74c.264-.574.625-.74 1.162-.74h.527v1.316zm-6.786 1.501h-3.359c.088.546.43.858 1.006.858.43 0 .732-.175.83-.487l1.425.4c-.351.848-1.22 1.364-2.255 1.364-1.748 0-2.549-1.355-2.549-2.515 0-1.14.703-2.505 2.45-2.505 1.856 0 2.471 1.384 2.471 2.408 0 .224-.01.37-.02.477zm-1.562-.945c-.04-.42-.342-.81-.889-.81-.508 0-.81.225-.908.81h1.797zM7.508 15.44h1.416l1.767-4.874h-1.62l-.86 2.837-.878-2.837H5.72l1.787 4.874zm-6.6 0H2.51v-3.558h1.524v3.558h1.591v-4.874H2.51v-.302c0-.332.235-.536.606-.536h.918V8.412H2.85c-1.162 0-1.943.712-1.943 1.755v.4H0v1.316h.908v3.558z"/></svg>
+        </a>
+      </div>
+
+      <p>© <span id="current-year"></span> <span data-i18n="footer_rights">WebWorldBD. Managed by</span> <strong>SHAFAET HOSSEN SARIP</strong>. <span data-i18n="footer_all_rights">All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTION BUTTONS -->
+  <div class="floating-actions" aria-label="Floating Actions">
+    <a href="https://www.fiverr.com/s/K38AVRk" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-fiverr" aria-label="Fiverr Profile" title="Fiverr Profile">
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"><title>Fiverr</title><path d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-.85c-.546 0-.84.41-.84 1.092v2.466h-1.61v-3.558h-.684c-.547 0-.84.41-.84 1.092v2.466h-1.61v-4.874h1.61v.74c.264-.574.626-.74 1.163-.74h1.972v.74c.264-.574.625-.74 1.162-.74h.527v1.316zm-6.786 1.501h-3.359c.088.546.43.858 1.006.858.43 0 .732-.175.83-.487l1.425.4c-.351.848-1.22 1.364-2.255 1.364-1.748 0-2.549-1.355-2.549-2.515 0-1.14.703-2.505 2.45-2.505 1.856 0 2.471 1.384 2.471 2.408 0 .224-.01.37-.02.477zm-1.562-.945c-.04-.42-.342-.81-.889-.81-.508 0-.81.225-.908.81h1.797zM7.508 15.44h1.416l1.767-4.874h-1.62l-.86 2.837-.878-2.837H5.72l1.787 4.874zm-6.6 0H2.51v-3.558h1.524v3.558h1.591v-4.874H2.51v-.302c0-.332.235-.536.606-.536h.918V8.412H2.85c-1.162 0-1.943.712-1.943 1.755v.4H0v1.316h.908v3.558z"/></svg>
+    </a>
+    <a href="https://wa.me/8801342697743" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-whatsapp" aria-label="WhatsApp Chat" title="WhatsApp Chat">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- MOBILE APP-LIKE FIXED BOTTOM NAVIGATION -->
+  <nav class="bottom-nav" aria-label="Mobile Navigation">
+    <div class="bottom-nav-container">
+      <a href="../index.html" class="bottom-nav-item">
+        <i class="fa-solid fa-house bottom-nav-icon"></i>
+        <span data-i18n="nav_home">Home</span>
+      </a>
+      <a href="../services.html" class="bottom-nav-item active">
+        <i class="fa-solid fa-layer-group bottom-nav-icon"></i>
+        <span data-i18n="nav_services">Services</span>
+      </a>
+      <a href="../start-project.html" class="bottom-nav-item bottom-nav-item-center" aria-label="Start Project">
+        <div class="bottom-nav-center-btn">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <span class="bottom-nav-center-label" data-i18n="nav_start_project_caps">START PROJECT</span>
+      </a>
+      <a href="../support.html" class="bottom-nav-item">
+        <i class="fa-solid fa-desktop bottom-nav-icon"></i>
+        <span data-i18n="nav_support">Live Preview</span>
+      </a>
+      <a href="../account.html" class="bottom-nav-item">
+        <i class="fa-solid fa-user bottom-nav-icon"></i>
+        <span data-i18n="nav_account">Account</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- JavaScript -->
+  <script src="../js/translations.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
