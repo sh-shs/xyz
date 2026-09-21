@@ -94,7 +94,7 @@
 
   --container-max-width: 1200px;
   --header-height: 72px;
-  --bottom-nav-height: 68px;
+  --bottom-nav-height: 80px;
 
   /* Transitions */
   --transition-fast: 0.15s ease;
