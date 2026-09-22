@@ -337,6 +337,10 @@
     font-size: 1.8rem;
   }
 
+  .pd-previews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .pd-checklist-grid,
   .pd-features-grid,
   .pd-audience-list,
@@ -346,6 +350,19 @@
 
   .pd-card {
     padding: 1.35rem 1.15rem;
+  }
+
+  .pd-previews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pd-cta-actions .btn {
+    width: 100%;
   }
 
   .pd-cta-card {
