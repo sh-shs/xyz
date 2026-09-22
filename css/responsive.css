@@ -337,9 +337,6 @@
     font-size: 1.8rem;
   }
 
-  .pd-previews-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .pd-checklist-grid,
   .pd-features-grid,
@@ -352,9 +349,6 @@
     padding: 1.35rem 1.15rem;
   }
 
-  .pd-previews-grid {
-    grid-template-columns: 1fr;
-  }
 
   .pd-cta-actions {
     flex-direction: column;
